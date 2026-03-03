@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Mohamed Adeep — DevOps & Cloud Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07090f;
+  --bg2:#0d1117;
+  --surface:#111827;
+  --surface2:#1a2235;
+  --cyan:#00e5ff;
+  --cyan-dim:rgba(0,229,255,.1);
+  --green:#39ff14;
+  --orange:#ff6b35;
+  --purple:#a78bfa;
+  --white:#e8eaf0;
+  --muted:#6b7280;
+  --border:rgba(255,255,255,.06);
+  --font-d:'Syne',sans-serif;
+  --font-m:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:var(--font-m);overflow-x:hidden;cursor:none}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9990;opacity:.5}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--cyan)}
+
+/* CURSOR */
+#cur{position:fixed;width:10px;height:10px;background:var(--cyan);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen}
+#cur-r{position:fixed;width:34px;height:34px;border:1px solid rgba(0,229,255,.35);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .1s ease}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3.5rem;background:rgba(7,9,15,.82);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--font-d);font-weight:800;font-size:1rem;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-ul{display:flex;gap:2rem;list-style:none}
+.nav-ul a{color:var(--muted);text-decoration:none;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;transition:color .2s;position:relative}
+.nav-ul a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--cyan);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.nav-ul a:hover{color:var(--cyan)}.nav-ul a:hover::after{transform:scaleX(1)}
+.nav-dot{display:flex;align-items:center;gap:.45rem;font-size:.62rem;letter-spacing:.1em;color:var(--green)}
+.nav-dot::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 2s infinite}
+
+/* HERO */
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:0 3.5rem;position:relative;overflow:hidden;gap:3rem}
+.h-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.025) 1px,transparent 1px);background-size:48px 48px;animation:gridmove 24s linear infinite}
+@keyframes gridmove{from{background-position:0 0}to{background-position:48px 48px}}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none}
+.o1{width:550px;height:550px;background:rgba(0,229,255,.045);top:-180px;right:-150px;animation:of 14s ease-in-out infinite}
+.o2{width:380px;height:380px;background:rgba(167,139,250,.055);bottom:-80px;left:5%;animation:of 18s ease-in-out infinite reverse}
+@keyframes of{0%,100%{transform:translate(0,0)}50%{transform:translate(28px,-28px)}}
+.hero-l{position:relative;z-index:2}
+.h-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.32rem .85rem;border:1px solid rgba(0,229,255,.18);border-radius:2px;background:rgba(0,229,255,.04);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:2rem;animation:fu .8s ease both}
+.h-name{font-family:var(--font-d);font-size:clamp(2.8rem,6vw,5.5rem);font-weight:800;line-height:.93;letter-spacing:-.02em;animation:fu .8s .1s ease both}
+.h-name .hl{display:block;-webkit-text-stroke:1.5px var(--cyan);color:transparent}
+.h-role{margin-top:1.1rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);animation:fu .8s .2s ease both}
+.h-role em{color:var(--cyan);font-style:normal}
+.tw-box{margin-top:1.3rem;padding:.75rem 1rem;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:2px;font-size:.76rem;color:var(--green);animation:fu .8s .3s ease both}
+.tw-box span::before{content:'$ ';color:var(--cyan)}
+#tw{display:inline}
+.cb{display:inline-block;width:7px;height:.82em;background:var(--green);vertical-align:middle;animation:blink .9s step-end infinite;margin-left:2px}
+.h-desc{margin-top:1.4rem;max-width:510px;font-size:.79rem;line-height:1.9;color:rgba(232,234,240,.5);animation:fu .8s .4s ease both}
+.h-btns{display:flex;gap:.85rem;margin-top:1.9rem;animation:fu .8s .5s ease both}
+.btn{display:inline-flex;align-items:center;gap:.45rem;padding:.68rem 1.5rem;border-radius:3px;font-family:var(--font-m);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:none;cursor:none;transition:all .2s}
+.btn-p{background:var(--cyan);color:var(--bg);font-weight:700;box-shadow:0 0 22px rgba(0,229,255,.18)}
+.btn-p:hover{box-shadow:0 0 42px rgba(0,229,255,.38);transform:translateY(-2px)}
+.btn-g{background:transparent;color:var(--white);border:1px solid var(--border)}
+.btn-g:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
+.h-stats{display:flex;gap:2.5rem;margin-top:2.8rem;animation:fu .8s .6s ease both}
+.st{display:flex;flex-direction:column;gap:.28rem}
+.st-n{font-family:var(--font-d);font-size:2.1rem;font-weight:800;color:var(--cyan);line-height:1}
+.st-l{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* TERMINAL */
+.hero-r{position:relative;z-index:2;animation:fu .8s .3s ease both}
+.term{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 30px rgba(0,229,255,.07)}
+.t-bar{display:flex;align-items:center;gap:.45rem;padding:.72rem 1rem;background:var(--surface2);border-bottom:1px solid var(--border)}
+.td{width:10px;height:10px;border-radius:50%}.td.r{background:#ff5f57}.td.y{background:#febc2e}.td.g{background:#28c840}
+.t-ttl{flex:1;text-align:center;font-size:.63rem;letter-spacing:.1em;color:var(--muted)}
+.t-body{padding:1.4rem;font-size:.72rem;line-height:1.8;min-height:300px}
+.tl{display:flex;gap:.45rem;margin-bottom:.15rem}
+.tp{color:var(--cyan);flex-shrink:0}.tc{color:var(--white)}.to{color:var(--muted);padding-left:.85rem}
+.tg{color:var(--green)}.tor{color:var(--orange)}.tpu{color:var(--purple)}.tco{color:#2d3748;font-style:italic}
+
+/* ANIMATIONS */
+@keyframes fu{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* SECTIONS */
+section{padding:7rem 3.5rem}
+.eye{display:inline-flex;align-items:center;gap:.7rem;font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);margin-bottom:.7rem}
+.eye::before{content:'';width:22px;height:1px;background:var(--cyan)}
+.sec-t{font-family:var(--font-d);font-size:clamp(1.9rem,4vw,2.9rem);font-weight:800;line-height:1;letter-spacing:-.02em;margin-bottom:.7rem}
+.sec-s{font-size:.79rem;color:var(--muted);line-height:1.8;max-width:460px}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+/* ABOUT */
+#about{background:var(--bg2)}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3.5rem;align-items:center}
+.at p{font-size:.8rem;line-height:1.95;color:rgba(232,234,240,.58);margin-bottom:.9rem}
+.at p span{color:var(--cyan)}
+.hi-list{display:flex;flex-direction:column;gap:.7rem;margin-top:1.4rem}
+.hi{display:flex;align-items:center;gap:.7rem;padding:.7rem 1rem;background:var(--surface);border:1px solid var(--border);border-radius:4px;font-size:.73rem;transition:all .2s}
+.hi:hover{border-color:rgba(0,229,255,.18);transform:translateX(4px)}
+.hi-ic{font-size:1rem;width:26px;text-align:center;flex-shrink:0}
+.hi-t{color:var(--white)}.hi-s{font-size:.62rem;color:var(--muted);display:block}
+.sr-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.sri{background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:1.1rem;transition:all .22s}
+.sri:hover{border-color:rgba(0,229,255,.18);transform:translateY(-3px)}
+.sri-n{font-size:.68rem;letter-spacing:.04em;margin-bottom:.55rem;color:var(--white)}
+.sri-b{height:4px;background:var(--surface2);border-radius:2px;overflow:hidden}
+.sri-f{height:100%;border-radius:2px;transition:width 1.3s ease}
+.sri-p{font-size:.58rem;color:var(--muted);margin-top:.38rem}
+
+/* EXPERIENCE */
+#experience{background:var(--bg)}
+.eg{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;margin-top:3.5rem}
+.ec{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:1.9rem;overflow:hidden;transition:all .25s}
+.ec::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--purple));transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.ec:hover{border-color:rgba(0,229,255,.13);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.3)}.ec:hover::before{transform:scaleX(1)}
+.ep{display:inline-flex;align-items:center;gap:.45rem;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);margin-bottom:.9rem}
+.ep::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+.er{font-family:var(--font-d);font-size:1.08rem;font-weight:700;margin-bottom:.28rem}
+.eco{font-size:.73rem;color:var(--muted);margin-bottom:1.1rem}
+.ebl{list-style:none}.ebl li{font-size:.73rem;color:rgba(232,234,240,.58);line-height:1.7;padding-left:1.1em;position:relative;margin-bottom:.38rem}
+.ebl li::before{content:'▸';position:absolute;left:0;color:var(--green)}
+.etags{display:flex;flex-wrap:wrap;gap:.38rem;margin-top:.9rem}
+.etag{font-size:.58rem;padding:.18rem .58rem;border-radius:2px;background:rgba(0,229,255,.05);color:var(--cyan);border:1px solid rgba(0,229,255,.1);letter-spacing:.04em}
+
+/* PROJECTS */
+#projects{background:var(--bg2)}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3.5rem}
+.pc{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:1.7rem;position:relative;overflow:hidden;transition:all .25s}
+.pc.feat{grid-column:span 3;border-color:rgba(0,229,255,.18)}
+.pc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);transform:scaleX(0);transition:transform .35s}
+.pc:hover{transform:translateY(-5px);box-shadow:0 24px 60px rgba(0,0,0,.38)}.pc:hover::after{transform:scaleX(1)}
+.ph{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.9rem}
+.pic{width:42px;height:42px;border-radius:7px;background:var(--cyan-dim);border:1px solid rgba(0,229,255,.13);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.pbadge{font-size:.58rem;letter-spacing:.08em;padding:.22rem .6rem;border-radius:2px}
+.pn{font-family:var(--font-d);font-size:.98rem;font-weight:700;margin-bottom:.45rem;line-height:1.2}
+.pd{font-size:.73rem;color:var(--muted);line-height:1.75;margin-bottom:1.1rem}
+.pipe{display:flex;align-items:center;gap:3px;margin-bottom:.9rem;flex-wrap:wrap}
+.ps{display:flex;align-items:center;gap:3px;flex-shrink:0}
+.pb{font-size:.56rem;padding:.18rem .48rem;border-radius:2px;letter-spacing:.04em;white-space:nowrap}
+.pa{color:var(--muted);font-size:.62rem}
+.pstack{display:flex;flex-wrap:wrap;gap:.35rem}
+.stag{font-size:.58rem;padding:.18rem .55rem;border-radius:2px;background:var(--surface2);color:rgba(232,234,240,.45);border:1px solid var(--border)}
+.pbuls{list-style:none;margin-bottom:.9rem;display:grid;grid-template-columns:1fr 1fr;gap:.2rem}
+.pbuls li{font-size:.7rem;color:rgba(232,234,240,.55);padding-left:.8em;position:relative;line-height:1.65}
+.pbuls li::before{content:'▸';position:absolute;left:0;color:var(--green);font-size:.58rem}
+
+/* SKILLS */
+#skills{background:var(--bg)}
+.skm{margin-top:3.5rem;display:flex;flex-direction:column;gap:2.8rem}
+.scat-t{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:.9rem;display:flex;align-items:center;gap:.6rem}
+.scat-t::after{content:'';flex:1;max-width:56px;height:1px;background:var(--cyan);opacity:.28}
+.sr{display:flex;flex-wrap:wrap;gap:.55rem}
+.sp{display:flex;align-items:center;gap:.45rem;padding:.48rem .95rem;border-radius:3px;border:1px solid var(--border);background:var(--surface);font-size:.7rem;transition:all .2s;cursor:none;position:relative;overflow:hidden}
+.sp::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,229,255,.04),transparent);opacity:0;transition:opacity .2s}
+.sp:hover{border-color:rgba(0,229,255,.22);transform:translateY(-2px);box-shadow:0 7px 22px rgba(0,0,0,.18)}.sp:hover::before{opacity:1}
+.sp-d{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+
+/* CERTS */
+#certifications{background:var(--bg2)}
+.cr{display:flex;gap:1.5rem;margin-top:3.5rem;flex-wrap:wrap}
+.cc{flex:1;min-width:230px;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:1.7rem;transition:all .22s;position:relative;overflow:hidden}
+.cc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--cyan),var(--purple));border-radius:2px 0 0 2px}
+.cc:hover{border-color:rgba(167,139,250,.2);transform:translateY(-4px)}
+.ce{font-size:1.9rem;margin-bottom:.9rem;display:block}
+.cn{font-family:var(--font-d);font-size:.92rem;font-weight:700;margin-bottom:.28rem}
+.ci{font-size:.68rem;color:var(--muted)}
+.cd{display:inline-block;margin-top:.7rem;font-size:.58rem;letter-spacing:.1em;padding:.18rem .62rem;border-radius:2px;background:rgba(0,229,255,.05);color:var(--cyan);border:1px solid rgba(0,229,255,.1)}
+
+/* EDUCATION */
+#education{background:var(--bg)}
+.educard{display:flex;align-items:flex-start;gap:1.8rem;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:2rem;margin-top:2.8rem;transition:all .22s;max-width:680px}
+.educard:hover{border-color:rgba(0,229,255,.13);transform:translateY(-3px)}
+.edu-ic{width:58px;height:58px;border-radius:9px;flex-shrink:0;background:var(--cyan-dim);border:1px solid rgba(0,229,255,.13);display:flex;align-items:center;justify-content:center;font-size:1.75rem}
+.edu-deg{font-family:var(--font-d);font-size:1.05rem;font-weight:700;margin-bottom:.28rem}
+.edu-sc{font-size:.77rem;color:var(--muted);margin-bottom:.22rem}
+.edu-yr{font-size:.68rem;color:var(--cyan)}
+
+/* CONTACT */
+#contact{background:var(--bg2);text-align:center}
+.ci2{max-width:660px;margin:0 auto}
+.ccta{font-family:var(--font-d);font-size:clamp(1.7rem,4vw,2.8rem);font-weight:800;line-height:1.08;margin:1.8rem 0}
+.ccta span{-webkit-text-stroke:1px var(--cyan);color:transparent}
+.cls{display:flex;justify-content:center;flex-wrap:wrap;gap:.9rem;margin-top:2.3rem}
+.cl{display:flex;align-items:center;gap:.55rem;padding:.65rem 1.45rem;border-radius:3px;border:1px solid var(--border);color:var(--muted);text-decoration:none;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;transition:all .2s}
+.cl:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,229,255,.07)}
+
+/* FOOTER */
+footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:.63rem;letter-spacing:.06em;color:var(--muted)}
+.fd{color:var(--green)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}.nav-ul{display:none}
+  #hero{grid-template-columns:1fr;padding:5rem 1.5rem 3rem;gap:2rem}.hero-r{display:none}
+  section{padding:5rem 1.5rem}
+  .ag,.eg{grid-template-columns:1fr}
+  .pg{grid-template-columns:1fr}.pc.feat{grid-column:span 1}
+  footer{flex-direction:column;gap:.5rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur-r"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">M.Adeep</div>
+  <ul class="nav-ul">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-dot">Open to Opportunities</div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="h-grid"></div>
+  <div class="orb o1"></div>
+  <div class="orb o2"></div>
+
+  <div class="hero-l">
+    <div class="h-badge">⚡ DevOps &amp; Cloud Engineer</div>
+    <h1 class="h-name">
+      Mohamed
+      <span class="hl">Adeep</span>
+    </h1>
+    <p class="h-role"><em>Cloud</em> · <em>CI/CD</em> · <em>Linux</em> · <em>Docker</em> · <em>AWS</em></p>
+    <div class="tw-box"><span><span id="tw"></span></span><span class="cb"></span></div>
+    <p class="h-desc">AWS Certified Cloud Engineer with 9 months of Technical Support experience — hands-on with Linux, OS administration, and mail server configuration. Now building secure CI/CD pipelines, containerized workloads, and production AWS architectures.</p>
+    <div class="h-btns">
+      <a href="#projects" class="btn btn-p">View Projects ↓</a>
+      <a href="#contact" class="btn btn-g">Get In Touch</a>
+    </div>
+    <div class="h-stats">
+      <div class="st"><span class="st-n">9+</span><span class="st-l">Months Exp</span></div>
+      <div class="st"><span class="st-n">2</span><span class="st-l">AWS Certs</span></div>
+      <div class="st"><span class="st-n">99.9%</span><span class="st-l">Uptime SLA</span></div>
+      <div class="st"><span class="st-n">10+</span><span class="st-l">Tools Mastered</span></div>
+    </div>
+  </div>
+
+  <div class="hero-r">
+    <div class="term">
+      <div class="t-bar">
+        <div class="td r"></div><div class="td y"></div><div class="td g"></div>
+        <div class="t-ttl">~/adeep — zsh</div>
+      </div>
+      <div class="t-body">
+        <div class="tl"><span class="tp">❯</span><span class="tc">whoami</span></div>
+        <div class="tl"><span class="to tg">Mohamed Adeep — DevOps &amp; Cloud Engineer</span></div>
+        <br/>
+        <div class="tl"><span class="tp">❯</span><span class="tc">cat profile.yaml</span></div>
+        <div class="tl"><span class="to tpu">cloud:</span></div>
+        <div class="tl"><span class="to" style="padding-left:1.6rem">- AWS (Certified) · Azure Basics</span></div>
+        <div class="tl"><span class="to tpu">containers:</span></div>
+        <div class="tl"><span class="to" style="padding-left:1.6rem">- Docker · Kubernetes · Compose</span></div>
+        <div class="tl"><span class="to tpu">cicd_security:</span></div>
+        <div class="tl"><span class="to" style="padding-left:1.6rem">- Jenkins · SonarQube · Trivy · GitLeaks</span></div>
+        <div class="tl"><span class="to tpu">support_exp:</span></div>
+        <div class="tl"><span class="to" style="padding-left:1.6rem">- Linux · Windows · Mail Config · 9 months</span></div>
+        <br/>
+        <div class="tl"><span class="tp">❯</span><span class="tc">cat certs.txt</span></div>
+        <div class="tl"><span class="to"><span class="tor">✓</span> AWS Cloud Practitioner — Sep 2025</span></div>
+        <div class="tl"><span class="to"><span class="tor">✓</span> AWS re/Start Graduate — Sep 2025</span></div>
+        <br/>
+        <div class="tl"><span class="tp">❯</span><span class="tc tg">status --check<span class="cb"></span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="eye">01 / About</div>
+  <h2 class="sec-t reveal">Who I Am</h2>
+  <div class="ag">
+    <div class="at reveal">
+      <p>I'm <span>Mohamed Adeep</span>, a DevOps &amp; Cloud Engineer based in <span>Theni, Tamil Nadu</span>. I hold a B.Sc. in Computer Science from HKRH College, Kamaraj University.</p>
+      <p>Before moving into cloud engineering, I spent <span>9 months in Technical Support</span> — diagnosing Linux systems, configuring mail servers (SMTP/IMAP/POP3), and resolving OS-level issues. That frontline operational experience shaped how I think about reliability and automation.</p>
+      <p>Today I design secure CI/CD pipelines, deploy containerized multi-tier applications, and architect production-ready AWS infrastructure — always with a mindset of <span>automate everything, monitor everything</span>.</p>
+      <div class="hi-list">
+        <div class="hi"><div class="hi-ic">🖥️</div><div><span class="hi-t">Technical Support Engineer</span><span class="hi-s">9 months · Linux · OS Administration · Mail Config</span></div></div>
+        <div class="hi"><div class="hi-ic">☁️</div><div><span class="hi-t">AWS Certified Cloud Practitioner</span><span class="hi-s">Amazon Web Services · Sep 2025</span></div></div>
+        <div class="hi"><div class="hi-ic">🚀</div><div><span class="hi-t">AWS re/Start Graduate</span><span class="hi-s">Intensive cloud &amp; DevOps bootcamp · Sep 2025</span></div></div>
+        <div class="hi"><div class="hi-ic">🔐</div><div><span class="hi-t">DevSecOps Practitioner</span><span class="hi-s">SonarQube · Trivy · GitLeaks · IAM · KMS</span></div></div>
+      </div>
+    </div>
+    <div class="sr-grid reveal">
+      <div class="sri"><div class="sri-n">AWS Cloud</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#00e5ff,#7b61ff)" data-w="88%"></div></div><div class="sri-p">88%</div></div>
+      <div class="sri"><div class="sri-n">Docker</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#0db7ed,#00e5ff)" data-w="85%"></div></div><div class="sri-p">85%</div></div>
+      <div class="sri"><div class="sri-n">Linux / OS</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#39ff14,#00e5ff)" data-w="90%"></div></div><div class="sri-p">90%</div></div>
+      <div class="sri"><div class="sri-n">Jenkins CI/CD</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#d33833,#a78bfa)" data-w="80%"></div></div><div class="sri-p">80%</div></div>
+      <div class="sri"><div class="sri-n">Kubernetes</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#326ce5,#00e5ff)" data-w="72%"></div></div><div class="sri-p">72%</div></div>
+      <div class="sri"><div class="sri-n">Mail Config</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#a78bfa,#39ff14)" data-w="78%"></div></div><div class="sri-p">78%</div></div>
+      <div class="sri"><div class="sri-n">Networking/VPC</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#00e5ff,#ff6b35)" data-w="83%"></div></div><div class="sri-p">83%</div></div>
+      <div class="sri"><div class="sri-n">DevSecOps</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#ff3366,#00e5ff)" data-w="76%"></div></div><div class="sri-p">76%</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="eye">02 / Experience</div>
+  <h2 class="sec-t reveal">Work History</h2>
+  <p class="sec-s reveal">Roles that built my operational instincts and cloud engineering depth.</p>
+  <div class="eg">
+    <div class="ec reveal">
+      <div class="ep">2024 – Present · 9 Months</div>
+      <div class="er">Technical Support Engineer</div>
+      <div class="eco">Organization · Tamil Nadu, India</div>
+      <ul class="ebl">
+        <li>Provided hands-on Linux support — diagnosing and resolving OS-level system failures efficiently.</li>
+        <li>Configured and maintained mail servers (SMTP, IMAP, POP3) — troubleshooting delivery and connectivity issues.</li>
+        <li>Administered Windows &amp; Linux environments: users, permissions, services, and system health.</li>
+        <li>Responded to technical incidents, reducing resolution time through structured runbooks.</li>
+        <li>Documented configurations and SOPs, improving knowledge base for the engineering team.</li>
+      </ul>
+      <div class="etags">
+        <span class="etag">Linux Admin</span>
+        <span class="etag">Windows OS</span>
+        <span class="etag">Mail Config</span>
+        <span class="etag">SMTP/IMAP/POP3</span>
+        <span class="etag">Troubleshooting</span>
+        <span class="etag">SLA</span>
+      </div>
+    </div>
+    <div class="ec reveal">
+      <div class="ep">2025 · AWS re/Start Program</div>
+      <div class="er">Cloud Engineering Trainee</div>
+      <div class="eco">AWS re/Start Bootcamp · Remote</div>
+      <ul class="ebl">
+        <li>Completed intensive AWS training: EC2, S3, VPC, IAM, RDS, Lambda, CloudWatch, API Gateway.</li>
+        <li>Built real-world 3-tier and serverless architectures in AWS lab environments.</li>
+        <li>Earned AWS Certified Cloud Practitioner during the program.</li>
+        <li>Practiced DevOps toolchain: Docker, Git, Jenkins, Kubernetes, SonarQube, Trivy.</li>
+        <li>Developed strong foundation in cloud security, networking, and monitoring practices.</li>
+      </ul>
+      <div class="etags">
+        <span class="etag">AWS</span>
+        <span class="etag">Docker</span>
+        <span class="etag">Kubernetes</span>
+        <span class="etag">Jenkins</span>
+        <span class="etag">CloudWatch</span>
+        <span class="etag">IAM</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="eye">03 / Projects</div>
+  <h2 class="sec-t reveal">Featured Work</h2>
+  <p class="sec-s reveal">Production-grade projects showcasing DevSecOps, cloud architecture, and Linux skills.</p>
+  <div class="pg">
+
+    <!-- FEATURED -->
+    <div class="pc feat reveal">
+      <div class="ph">
+        <div class="pic">🔐</div>
+        <span class="pbadge" style="background:rgba(57,255,20,.07);color:#39ff14;border:1px solid rgba(57,255,20,.15)">⭐ Featured Project</span>
+      </div>
+      <div class="pn">DevSecOps CI/CD Pipeline — Multi-Tier NodeJS Application</div>
+      <div class="pd">End-to-end secure pipeline: static analysis → secrets detection → container scanning → automated multi-container deployment on AWS EC2.</div>
+      <div class="pipe">
+        <div class="ps"><div class="pb" style="background:rgba(167,139,250,.1);color:#a78bfa;border:1px solid rgba(167,139,250,.2)">GitHub</div><div class="pa">→</div></div>
+        <div class="ps"><div class="pb" style="background:rgba(0,229,255,.1);color:#00e5ff;border:1px solid rgba(0,229,255,.2)">Jenkins</div><div class="pa">→</div></div>
+        <div class="ps"><div class="pb" style="background:rgba(255,107,53,.1);color:#ff6b35;border:1px solid rgba(255,107,53,.2)">SonarQube</div><div class="pa">→</div></div>
+        <div class="ps"><div class="pb" style="background:rgba(255,51,102,.1);color:#ff3366;border:1px solid rgba(255,51,102,.2)">GitLeaks</div><div class="pa">→</div></div>
+        <div class="ps"><div class="pb" style="background:rgba(255,149,0,.1);color:#ff9500;border:1px solid rgba(255,149,0,.2)">Trivy</div><div class="pa">→</div></div>
+        <div class="ps"><div class="pb" style="background:rgba(13,183,237,.1);color:#0db7ed;border:1px solid rgba(13,183,237,.2)">Docker</div><div class="pa">→</div></div>
+        <div class="ps"><div class="pb" style="background:rgba(13,183,237,.1);color:#0db7ed;border:1px solid rgba(13,183,237,.2)">DockerHub</div><div class="pa">→</div></div>
+        <div class="ps"><div class="pb" style="background:rgba(57,255,20,.1);color:#39ff14;border:1px solid rgba(57,255,20,.2)">Deploy 🚀</div></div>
+      </div>
+      <ul class="pbuls">
+        <li>Designed end-to-end CI/CD with Jenkins + GitHub integration</li>
+        <li>SonarQube static analysis with Quality Gate enforcement</li>
+        <li>GitLeaks secrets detection during CI stage</li>
+        <li>Trivy scanning for filesystem &amp; Docker image vulnerabilities</li>
+        <li>Multi-stage Dockerfile for React frontend (optimized image size)</li>
+        <li>Docker Compose: Frontend + Backend + MySQL deployment</li>
+        <li>Automated DockerHub image build, scan &amp; push via Jenkins</li>
+        <li>Trivy reports archived as build artifacts for compliance</li>
+      </ul>
+      <div class="pstack">
+        <span class="stag" style="color:#00e5ff;border-color:rgba(0,229,255,.15)">Jenkins</span>
+        <span class="stag" style="color:#a78bfa;border-color:rgba(167,139,250,.15)">GitHub</span>
+        <span class="stag" style="color:#ff6b35;border-color:rgba(255,107,53,.15)">SonarQube</span>
+        <span class="stag" style="color:#ff3366;border-color:rgba(255,51,102,.15)">GitLeaks</span>
+        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.15)">Trivy</span>
+        <span class="stag" style="color:#0db7ed;border-color:rgba(13,183,237,.15)">Docker</span>
+        <span class="stag" style="color:#0db7ed;border-color:rgba(13,183,237,.15)">Docker Compose</span>
+        <span class="stag">NodeJS</span>
+        <span class="stag">MySQL</span>
+        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.15)">AWS EC2</span>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="pc reveal">
+      <div class="ph">
+        <div class="pic" style="background:rgba(255,149,0,.08);border-color:rgba(255,149,0,.15)">🏗️</div>
+        <span class="pbadge" style="background:rgba(167,139,250,.07);color:#a78bfa;border:1px solid rgba(167,139,250,.15)">Sep 2025</span>
+      </div>
+      <div class="pn">Three-Tier Architecture on AWS</div>
+      <div class="pd">Highly available 3-tier app on AWS with public/private subnets, Auto Scaling, Load Balancer, RDS, and full CloudWatch observability.</div>
+      <div style="display:flex;align-items:center;gap:3px;margin-bottom:.9rem;font-size:.58rem;flex-wrap:wrap">
+        <div style="padding:.2rem .5rem;border-radius:2px;background:rgba(107,114,128,.1);color:#6b7280;border:1px solid rgba(107,114,128,.18)">Internet</div>
+        <span style="color:#374151">→</span>
+        <div style="padding:.2rem .5rem;border-radius:2px;background:rgba(0,229,255,.09);color:#00e5ff;border:1px solid rgba(0,229,255,.18)">LB</div>
+        <span style="color:#374151">→</span>
+        <div style="padding:.2rem .5rem;border-radius:2px;background:rgba(167,139,250,.09);color:#a78bfa;border:1px solid rgba(167,139,250,.18)">Web EC2</div>
+        <span style="color:#374151">→</span>
+        <div style="padding:.2rem .5rem;border-radius:2px;background:rgba(57,255,20,.08);color:#39ff14;border:1px solid rgba(57,255,20,.18)">App EC2</div>
+        <span style="color:#374151">→</span>
+        <div style="padding:.2rem .5rem;border-radius:2px;background:rgba(255,107,53,.08);color:#ff6b35;border:1px solid rgba(255,107,53,.18)">RDS</div>
+      </div>
+      <ul style="list-style:none;margin-bottom:.9rem">
+        <li style="font-size:.7rem;color:rgba(232,234,240,.55);padding-left:.8em;position:relative;margin-bottom:.3rem"><span style="position:absolute;left:0;color:#39ff14;font-size:.58rem">▸</span>Public/private subnets with secure segmentation</li>
+        <li style="font-size:.7rem;color:rgba(232,234,240,.55);padding-left:.8em;position:relative;margin-bottom:.3rem"><span style="position:absolute;left:0;color:#39ff14;font-size:.58rem">▸</span>Auto Scaling + Load Balancer for traffic spikes</li>
+        <li style="font-size:.7rem;color:rgba(232,234,240,.55);padding-left:.8em;position:relative;margin-bottom:.3rem"><span style="position:absolute;left:0;color:#39ff14;font-size:.58rem">▸</span>IAM least-privilege roles &amp; security groups</li>
+        <li style="font-size:.7rem;color:rgba(232,234,240,.55);padding-left:.8em;position:relative"><span style="position:absolute;left:0;color:#39ff14;font-size:.58rem">▸</span>CloudWatch dashboards &amp; alarms for observability</li>
+      </ul>
+      <div class="pstack">
+        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.18)">EC2</span>
+        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.18)">RDS</span>
+        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.18)">S3</span>
+        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.18)">VPC</span>
+        <span class="stag">CloudWatch</span><span class="stag">IAM</span><span class="stag">Load Balancer</span>
+      </div>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="pc reveal">
+      <div class="ph">
+        <div class="pic" style="background:rgba(57,255,20,.07);border-color:rgba(57,255,20,.12)">🖥️</div>
+        <span class="pbadge" style="background:rgba(57,255,20,.06);color:#39ff14;border:1px solid rgba(57,255,20,.15)">Support</span>
+      </div>
+      <div class="pn">Linux &amp; Mail Server Administration</div>
+      <div class="pd">9 months of hands-on technical support — Linux system admin, OS configuration, and complete mail server setup and troubleshooting in production environments.</div>
+      <ul style="list-style:none;margin-bottom:.9rem">
+        <li style="font-size:.7rem;color:rgba(232,234,240,.55);padding-left:.8em;position:relative;margin-bottom:.3rem"><span style="position:absolute;left:0;color:#39ff14;font-size:.58rem">▸</span>Configured SMTP, IMAP, POP3 mail servers end-to-end</li>
+        <li style="font-size:.7rem;color:rgba(232,234,240,.55);padding-left:.8em;position:relative;margin-bottom:.3rem"><span style="position:absolute;left:0;color:#39ff14;font-size:.58rem">▸</span>Linux admin: users, groups, permissions, services, cron</li>
+        <li style="font-size:.7rem;color:rgba(232,234,240,.55);padding-left:.8em;position:relative;margin-bottom:.3rem"><span style="position:absolute;left:0;color:#39ff14;font-size:.58rem">▸</span>OS-level diagnosis in Windows &amp; Linux environments</li>
+        <li style="font-size:.7rem;color:rgba(232,234,240,.55);padding-left:.8em;position:relative"><span style="position:absolute;left:0;color:#39ff14;font-size:.58rem">▸</span>Maintained SLA docs and operational runbooks</li>
+      </ul>
+      <div class="pstack">
+        <span class="stag" style="color:#39ff14;border-color:rgba(57,255,20,.18)">Linux</span>
+        <span class="stag">Windows</span>
+        <span class="stag">SMTP</span>
+        <span class="stag">IMAP</span>
+        <span class="stag">POP3</span>
+        <span class="stag">Bash</span>
+        <span class="stag">SLA Docs</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="eye">04 / Skills</div>
+  <h2 class="sec-t reveal">Technical Arsenal</h2>
+  <div class="skm">
+    <div class="reveal">
+      <div class="scat-t">Cloud Platforms</div>
+      <div class="sr">
+        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>AWS (Certified)</div>
+        <div class="sp"><span class="sp-d" style="background:#0078d4"></span>Azure Basics</div>
+        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>EC2 · S3 · RDS</div>
+        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>VPC · IAM · KMS</div>
+        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>CloudWatch</div>
+        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>Lambda · API Gateway</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="scat-t">Containers &amp; Orchestration</div>
+      <div class="sr">
+        <div class="sp"><span class="sp-d" style="background:#0db7ed"></span>Docker</div>
+        <div class="sp"><span class="sp-d" style="background:#326ce5"></span>Kubernetes</div>
+        <div class="sp"><span class="sp-d" style="background:#0db7ed"></span>Docker Compose</div>
+        <div class="sp"><span class="sp-d" style="background:#326ce5"></span>kubectl</div>
+        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>Multi-stage Builds</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="scat-t">CI/CD &amp; DevSecOps</div>
+      <div class="sr">
+        <div class="sp"><span class="sp-d" style="background:#d33833"></span>Jenkins</div>
+        <div class="sp"><span class="sp-d" style="background:#fff"></span>GitHub / Git</div>
+        <div class="sp"><span class="sp-d" style="background:#4e9bcd"></span>SonarQube</div>
+        <div class="sp"><span class="sp-d" style="background:#ff3366"></span>GitLeaks</div>
+        <div class="sp"><span class="sp-d" style="background:#1904da"></span>Trivy</div>
+        <div class="sp"><span class="sp-d" style="background:#a78bfa"></span>Quality Gates</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="scat-t">Systems &amp; Networking</div>
+      <div class="sr">
+        <div class="sp"><span class="sp-d" style="background:#39ff14"></span>Linux Administration</div>
+        <div class="sp"><span class="sp-d" style="background:#0078d4"></span>Windows OS</div>
+        <div class="sp"><span class="sp-d" style="background:#a78bfa"></span>Mail Config (SMTP/IMAP/POP3)</div>
+        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>VPC · Subnets · IGW · NAT</div>
+        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>Route Tables · DNS · TCP/IP</div>
+        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>Load Balancer</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="scat-t">Monitoring &amp; Security</div>
+      <div class="sr">
+        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>CloudWatch</div>
+        <div class="sp"><span class="sp-d" style="background:#e6522c"></span>Prometheus</div>
+        <div class="sp"><span class="sp-d" style="background:#f46800"></span>Grafana</div>
+        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>IAM Roles &amp; Policies</div>
+        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>KMS</div>
+        <div class="sp"><span class="sp-d" style="background:#a78bfa"></span>Security Groups</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="eye">05 / Certifications</div>
+  <h2 class="sec-t reveal">Credentials</h2>
+  <div class="cr">
+    <div class="cc reveal">
+      <span class="ce">☁️</span>
+      <div class="cn">AWS Certified Cloud Practitioner</div>
+      <div class="ci">Amazon Web Services</div>
+      <span class="cd">Sep 2025</span>
+    </div>
+    <div class="cc reveal">
+      <span class="ce">🚀</span>
+      <div class="cn">AWS re/Start Graduate</div>
+      <div class="ci">Amazon Web Services</div>
+      <span class="cd">Sep 2025</span>
+    </div>
+    <div class="cc reveal" style="border-color:rgba(167,139,250,.1)">
+      <span class="ce">🎯</span>
+      <div class="cn">AWS Solutions Architect Associate</div>
+      <div class="ci">Target Certification · In Progress</div>
+      <span class="cd" style="color:#a78bfa;border-color:rgba(167,139,250,.18);background:rgba(167,139,250,.05)">Coming Soon</span>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="eye">06 / Education</div>
+  <h2 class="sec-t reveal">Academic Background</h2>
+  <div class="educard reveal">
+    <div class="edu-ic">🎓</div>
+    <div>
+      <div class="edu-deg">Bachelor of Science in Computer Science</div>
+      <div class="edu-sc">HKRH College · Affiliated by Kamaraj University · Theni, Tamil Nadu</div>
+      <div class="edu-yr">May 2022 – May 2025</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="ci2">
+    <div class="eye" style="justify-content:center">07 / Contact</div>
+    <div class="ccta reveal">
+      Let's build<br/><span>cloud-native</span> together.
+    </div>
+    <p style="font-size:.78rem;color:var(--muted);line-height:1.8;max-width:440px;margin:0 auto" class="reveal">
+      Open to DevOps Engineer, Cloud Engineer, and Platform Engineering roles.<br/>Let's talk automation, infrastructure, and reliability.
+    </p>
+    <div class="cls reveal">
+      <a href="mailto:mohamedadeep05@gmail.com" class="cl">✉ mohamedadeep05@gmail.com</a>
+      <a href="https://linkedin.com/in/mohamed-adeep" class="cl" target="_blank">🔗 LinkedIn</a>
+      <a href="https://github.com/Md-Adheep" class="cl" target="_blank">⚙ GitHub</a>
+      <a href="tel:6383819043" class="cl">📞 6383819043</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Mohamed Adeep</span>
+  <span>DevOps <span class="fd">·</span> Cloud <span class="fd">·</span> Linux</span>
+  <span>Built with <span class="fd">♥</span> — GitHub Pages Ready</span>
+</footer>
+
+<script>
+// CURSOR
+const cur=document.getElementById('cur'),ring=document.getElementById('cur-r');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function animR(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animR)})();
+document.querySelectorAll('a,.sp,.pc,.ec,.cc,.hi,.sri').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';ring.style.width='48px';ring.style.height='48px';ring.style.borderColor='rgba(0,229,255,.65)'});
+  el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';ring.style.width='34px';ring.style.height='34px';ring.style.borderColor='rgba(0,229,255,.35)'});
+});
+
+// TYPEWRITER
+const lines=['whoami → DevOps & Cloud Engineer','docker build -t adeep/devsecops .','kubectl apply -f k8s/deployment.yaml','terraform apply --auto-approve','ssh ubuntu@ec2 -i adeep-key.pem','systemctl status postfix','jenkins --run pipeline.groovy'];
+let li=0,ci=0,del=false;
+const twEl=document.getElementById('tw');
+function type(){
+  const l=lines[li];
+  if(!del){twEl.textContent=l.slice(0,++ci);if(ci===l.length){del=true;setTimeout(type,1900);return}setTimeout(type,52)}
+  else{twEl.textContent=l.slice(0,--ci);if(ci===0){del=false;li=(li+1)%lines.length;setTimeout(type,420);return}setTimeout(type,24)}
+}
+type();
+
+// SCROLL REVEAL
+const ro=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*55);ro.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// SKILL BARS
+const bo=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.sri-f').forEach(b=>{b.style.width=b.dataset.w});bo.unobserve(e.target)}})},{threshold:.3});
+document.querySelectorAll('.sr-grid').forEach(el=>bo.observe(el));
+
+// NAV HIGHLIGHT
+const secs=document.querySelectorAll('section[id]'),navAs=document.querySelectorAll('.nav-ul a');
+window.addEventListener('scroll',()=>{
+  let c='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-150)c=s.id});
+  navAs.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+c?'var(--cyan)':''});
+});
+</script>
+</body>
+</html>
