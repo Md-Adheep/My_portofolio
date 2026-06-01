@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Mohamed Adeep — DevOps & Cloud Engineer</title>
+<title>Mohamed Adeep — DevOps Engineer</title>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -27,8 +27,6 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--white);font-family:var(--font-m);overflow-x:hidden;cursor:none}
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9990;opacity:.5}
 ::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--cyan)}
-
-/* CURSOR */
 #cur{position:fixed;width:10px;height:10px;background:var(--cyan);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen}
 #cur-r{position:fixed;width:34px;height:34px;border:1px solid rgba(0,229,255,.35);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .1s ease}
 
@@ -81,7 +79,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .t-body{padding:1.4rem;font-size:.72rem;line-height:1.8;min-height:300px}
 .tl{display:flex;gap:.45rem;margin-bottom:.15rem}
 .tp{color:var(--cyan);flex-shrink:0}.tc{color:var(--white)}.to{color:var(--muted);padding-left:.85rem}
-.tg{color:var(--green)}.tor{color:var(--orange)}.tpu{color:var(--purple)}.tco{color:#2d3748;font-style:italic}
+.tg{color:var(--green)}.tor{color:var(--orange)}.tpu{color:var(--purple)}
 
 /* ANIMATIONS */
 @keyframes fu{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
@@ -117,12 +115,13 @@ section{padding:7rem 3.5rem}
 
 /* EXPERIENCE */
 #experience{background:var(--bg)}
-.eg{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;margin-top:3.5rem}
+.eg{display:flex;flex-direction:column;gap:1.8rem;margin-top:3.5rem}
 .ec{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:1.9rem;overflow:hidden;transition:all .25s}
 .ec::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--purple));transform:scaleX(0);transform-origin:left;transition:transform .35s}
 .ec:hover{border-color:rgba(0,229,255,.13);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.3)}.ec:hover::before{transform:scaleX(1)}
 .ep{display:inline-flex;align-items:center;gap:.45rem;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);margin-bottom:.9rem}
 .ep::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+.ep.active::before{background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 2s infinite}
 .er{font-family:var(--font-d);font-size:1.08rem;font-weight:700;margin-bottom:.28rem}
 .eco{font-size:.73rem;color:var(--muted);margin-bottom:1.1rem}
 .ebl{list-style:none}.ebl li{font-size:.73rem;color:rgba(232,234,240,.58);line-height:1.7;padding-left:1.1em;position:relative;margin-bottom:.38rem}
@@ -141,16 +140,20 @@ section{padding:7rem 3.5rem}
 .pic{width:42px;height:42px;border-radius:7px;background:var(--cyan-dim);border:1px solid rgba(0,229,255,.13);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
 .pbadge{font-size:.58rem;letter-spacing:.08em;padding:.22rem .6rem;border-radius:2px}
 .pn{font-family:var(--font-d);font-size:.98rem;font-weight:700;margin-bottom:.45rem;line-height:1.2}
-.pd{font-size:.73rem;color:var(--muted);line-height:1.75;margin-bottom:1.1rem}
+.pd{font-size:.73rem;color:var(--muted);line-height:1.75;margin-bottom:.9rem}
 .pipe{display:flex;align-items:center;gap:3px;margin-bottom:.9rem;flex-wrap:wrap}
 .ps{display:flex;align-items:center;gap:3px;flex-shrink:0}
 .pb{font-size:.56rem;padding:.18rem .48rem;border-radius:2px;letter-spacing:.04em;white-space:nowrap}
 .pa{color:var(--muted);font-size:.62rem}
-.pstack{display:flex;flex-wrap:wrap;gap:.35rem}
+.pstack{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.9rem}
 .stag{font-size:.58rem;padding:.18rem .55rem;border-radius:2px;background:var(--surface2);color:rgba(232,234,240,.45);border:1px solid var(--border)}
-.pbuls{list-style:none;margin-bottom:.9rem;display:grid;grid-template-columns:1fr 1fr;gap:.2rem}
-.pbuls li{font-size:.7rem;color:rgba(232,234,240,.55);padding-left:.8em;position:relative;line-height:1.65}
+.pbuls{list-style:none;margin-bottom:.9rem}
+.pbuls li{font-size:.7rem;color:rgba(232,234,240,.55);padding-left:.8em;position:relative;line-height:1.75;margin-bottom:.2rem}
 .pbuls li::before{content:'▸';position:absolute;left:0;color:var(--green);font-size:.58rem}
+.plinks{display:flex;gap:.6rem;margin-top:1rem;flex-wrap:wrap}
+.plink{display:inline-flex;align-items:center;gap:.4rem;font-size:.62rem;padding:.3rem .75rem;border-radius:2px;border:1px solid var(--border);color:var(--muted);text-decoration:none;letter-spacing:.06em;transition:all .2s}
+.plink:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-1px)}
+.plink.primary{border-color:rgba(0,229,255,.25);color:var(--cyan);background:rgba(0,229,255,.04)}
 
 /* SKILLS */
 #skills{background:var(--bg)}
@@ -196,14 +199,14 @@ section{padding:7rem 3.5rem}
 footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:.63rem;letter-spacing:.06em;color:var(--muted)}
 .fd{color:var(--green)}
 
-/* RESPONSIVE */
 @media(max-width:900px){
   nav{padding:1rem 1.5rem}.nav-ul{display:none}
   #hero{grid-template-columns:1fr;padding:5rem 1.5rem 3rem;gap:2rem}.hero-r{display:none}
   section{padding:5rem 1.5rem}
-  .ag,.eg{grid-template-columns:1fr}
+  .ag{grid-template-columns:1fr}
   .pg{grid-template-columns:1fr}.pc.feat{grid-column:span 1}
   footer{flex-direction:column;gap:.5rem;text-align:center}
+  .h-stats{flex-wrap:wrap;gap:1.5rem}
 }
 </style>
 </head>
@@ -238,18 +241,18 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
       Mohamed
       <span class="hl">Adeep</span>
     </h1>
-    <p class="h-role"><em>Cloud</em> · <em>CI/CD</em> · <em>Linux</em> · <em>Docker</em> · <em>AWS</em></p>
+    <p class="h-role"><em>CI/CD</em> · <em>Cloud</em> · <em>Linux</em> · <em>Docker</em> · <em>AWS</em></p>
     <div class="tw-box"><span><span id="tw"></span></span><span class="cb"></span></div>
-    <p class="h-desc">AWS Certified Cloud Engineer with 9 months of Technical Support experience — hands-on with Linux, OS administration, and mail server configuration. Now building secure CI/CD pipelines, containerized workloads, and production AWS architectures.</p>
+    <p class="h-desc">DevOps Engineer with hands-on industry experience designing CI/CD pipelines, automating application delivery, and managing cloud infrastructure on AWS. Currently shipping production workloads at GB Tech Corp — GitHub Actions, Nginx, Plesk, and AWS every day.</p>
     <div class="h-btns">
       <a href="#projects" class="btn btn-p">View Projects ↓</a>
       <a href="#contact" class="btn btn-g">Get In Touch</a>
     </div>
     <div class="h-stats">
-      <div class="st"><span class="st-n">9+</span><span class="st-l">Months Exp</span></div>
+      <div class="st"><span class="st-n">1+</span><span class="st-l">Years Exp</span></div>
       <div class="st"><span class="st-n">2</span><span class="st-l">AWS Certs</span></div>
+      <div class="st"><span class="st-n">2</span><span class="st-l">Live Products</span></div>
       <div class="st"><span class="st-n">99.9%</span><span class="st-l">Uptime SLA</span></div>
-      <div class="st"><span class="st-n">10+</span><span class="st-l">Tools Mastered</span></div>
     </div>
   </div>
 
@@ -261,23 +264,23 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
       </div>
       <div class="t-body">
         <div class="tl"><span class="tp">❯</span><span class="tc">whoami</span></div>
-        <div class="tl"><span class="to tg">Mohamed Adeep — DevOps &amp; Cloud Engineer</span></div>
+        <div class="tl"><span class="to tg">Mohamed Adeep — DevOps Engineer @ GB Tech Corp</span></div>
         <br/>
         <div class="tl"><span class="tp">❯</span><span class="tc">cat profile.yaml</span></div>
+        <div class="tl"><span class="to tpu">cicd:</span></div>
+        <div class="tl"><span class="to" style="padding-left:1.6rem">- GitHub Actions · Jenkins · Release Mgmt</span></div>
         <div class="tl"><span class="to tpu">cloud:</span></div>
-        <div class="tl"><span class="to" style="padding-left:1.6rem">- AWS (Certified) · Azure Basics</span></div>
-        <div class="tl"><span class="to tpu">containers:</span></div>
-        <div class="tl"><span class="to" style="padding-left:1.6rem">- Docker · Kubernetes · Compose</span></div>
-        <div class="tl"><span class="to tpu">cicd_security:</span></div>
-        <div class="tl"><span class="to" style="padding-left:1.6rem">- Jenkins · SonarQube · Trivy · GitLeaks</span></div>
-        <div class="tl"><span class="to tpu">support_exp:</span></div>
-        <div class="tl"><span class="to" style="padding-left:1.6rem">- Linux · Windows · Mail Config · 9 months</span></div>
+        <div class="tl"><span class="to" style="padding-left:1.6rem">- AWS EC2 · DynamoDB · S3 · IAM · CloudWatch</span></div>
+        <div class="tl"><span class="to tpu">infra:</span></div>
+        <div class="tl"><span class="to" style="padding-left:1.6rem">- Linux · Plesk · Nginx · Docker · Backup/DR</span></div>
+        <div class="tl"><span class="to tpu">devsecops:</span></div>
+        <div class="tl"><span class="to" style="padding-left:1.6rem">- SonarQube · GitLeaks · Vuln Scanning · IAM</span></div>
         <br/>
         <div class="tl"><span class="tp">❯</span><span class="tc">cat certs.txt</span></div>
         <div class="tl"><span class="to"><span class="tor">✓</span> AWS Cloud Practitioner — Sep 2025</span></div>
         <div class="tl"><span class="to"><span class="tor">✓</span> AWS re/Start Graduate — Sep 2025</span></div>
         <br/>
-        <div class="tl"><span class="tp">❯</span><span class="tc tg">status --check<span class="cb"></span></span></div>
+        <div class="tl"><span class="tp">❯</span><span class="tc tg">uptime --check<span class="cb"></span></span></div>
       </div>
     </div>
   </div>
@@ -289,25 +292,25 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
   <h2 class="sec-t reveal">Who I Am</h2>
   <div class="ag">
     <div class="at reveal">
-      <p>I'm <span>Mohamed Adeep</span>, a DevOps &amp; Cloud Engineer based in <span>Theni, Tamil Nadu</span>. I hold a B.Sc. in Computer Science from HKRH College, Kamaraj University.</p>
-      <p>Before moving into cloud engineering, I spent <span>9 months in Technical Support</span> — diagnosing Linux systems, configuring mail servers (SMTP/IMAP/POP3), and resolving OS-level issues. That frontline operational experience shaped how I think about reliability and automation.</p>
-      <p>Today I design secure CI/CD pipelines, deploy containerized multi-tier applications, and architect production-ready AWS infrastructure — always with a mindset of <span>automate everything, monitor everything</span>.</p>
+      <p>I'm <span>Mohamed Adeep</span>, a DevOps Engineer based in <span>Chennai, Tamil Nadu</span>. I hold a B.Sc. in Computer Science from HKRH College, Kamaraj University.</p>
+      <p>Currently working at <span>GB Tech Corp</span> where I design and maintain CI/CD pipelines using GitHub Actions, manage AWS infrastructure, administer Linux and Plesk servers, and ensure reliable application delivery for SaaS products.</p>
+      <p>I started with the AWS re/Start bootcamp which led to my <span>AWS Cloud Practitioner</span> certification — and now I build and ship production DevOps infrastructure every day, with a mindset of <span>automate everything, monitor everything</span>.</p>
       <div class="hi-list">
-        <div class="hi"><div class="hi-ic">🖥️</div><div><span class="hi-t">Technical Support Engineer</span><span class="hi-s">9 months · Linux · OS Administration · Mail Config</span></div></div>
+        <div class="hi"><div class="hi-ic">🏢</div><div><span class="hi-t">DevSecOps Engineer · GB Tech Corp</span><span class="hi-s">Feb 2026 – Present · Chennai · GitHub Actions · AWS</span></div></div>
         <div class="hi"><div class="hi-ic">☁️</div><div><span class="hi-t">AWS Certified Cloud Practitioner</span><span class="hi-s">Amazon Web Services · Sep 2025</span></div></div>
-        <div class="hi"><div class="hi-ic">🚀</div><div><span class="hi-t">AWS re/Start Graduate</span><span class="hi-s">Intensive cloud &amp; DevOps bootcamp · Sep 2025</span></div></div>
-        <div class="hi"><div class="hi-ic">🔐</div><div><span class="hi-t">DevSecOps Practitioner</span><span class="hi-s">SonarQube · Trivy · GitLeaks · IAM · KMS</span></div></div>
+        <div class="hi"><div class="hi-ic">🚀</div><div><span class="hi-t">AWS re/Start Graduate</span><span class="hi-s">Intensive 12-week cloud &amp; DevOps bootcamp · Sep 2025</span></div></div>
+        <div class="hi"><div class="hi-ic">🔐</div><div><span class="hi-t">DevSecOps Practitioner</span><span class="hi-s">SonarQube · GitLeaks · Trivy · IAM · Vulnerability Scanning</span></div></div>
       </div>
     </div>
     <div class="sr-grid reveal">
       <div class="sri"><div class="sri-n">AWS Cloud</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#00e5ff,#7b61ff)" data-w="88%"></div></div><div class="sri-p">88%</div></div>
-      <div class="sri"><div class="sri-n">Docker</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#0db7ed,#00e5ff)" data-w="85%"></div></div><div class="sri-p">85%</div></div>
-      <div class="sri"><div class="sri-n">Linux / OS</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#39ff14,#00e5ff)" data-w="90%"></div></div><div class="sri-p">90%</div></div>
+      <div class="sri"><div class="sri-n">GitHub Actions</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#a78bfa,#00e5ff)" data-w="90%"></div></div><div class="sri-p">90%</div></div>
+      <div class="sri"><div class="sri-n">Linux / Plesk</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#39ff14,#00e5ff)" data-w="88%"></div></div><div class="sri-p">88%</div></div>
+      <div class="sri"><div class="sri-n">Docker</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#0db7ed,#00e5ff)" data-w="84%"></div></div><div class="sri-p">84%</div></div>
+      <div class="sri"><div class="sri-n">Nginx</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#39ff14,#a78bfa)" data-w="85%"></div></div><div class="sri-p">85%</div></div>
       <div class="sri"><div class="sri-n">Jenkins CI/CD</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#d33833,#a78bfa)" data-w="80%"></div></div><div class="sri-p">80%</div></div>
-      <div class="sri"><div class="sri-n">Kubernetes</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#326ce5,#00e5ff)" data-w="72%"></div></div><div class="sri-p">72%</div></div>
-      <div class="sri"><div class="sri-n">Mail Config</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#a78bfa,#39ff14)" data-w="78%"></div></div><div class="sri-p">78%</div></div>
       <div class="sri"><div class="sri-n">Networking/VPC</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#00e5ff,#ff6b35)" data-w="83%"></div></div><div class="sri-p">83%</div></div>
-      <div class="sri"><div class="sri-n">DevSecOps</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#ff3366,#00e5ff)" data-w="76%"></div></div><div class="sri-p">76%</div></div>
+      <div class="sri"><div class="sri-n">DevSecOps</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#ff3366,#00e5ff)" data-w="78%"></div></div><div class="sri-p">78%</div></div>
     </div>
   </div>
 </section>
@@ -318,46 +321,59 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
   <h2 class="sec-t reveal">Work History</h2>
   <p class="sec-s reveal">Roles that built my operational instincts and cloud engineering depth.</p>
   <div class="eg">
+
+    <!-- CURRENT ROLE -->
     <div class="ec reveal">
-      <div class="ep">2024 – Present · 9 Months</div>
-      <div class="er">Technical Support Engineer</div>
-      <div class="eco">Organization · Tamil Nadu, India</div>
+      <div class="ep active">Feb 2026 – Present · Current Role</div>
+      <div class="er">DevSecOps Engineer</div>
+      <div class="eco">GB Tech Corp · Chennai, India</div>
       <ul class="ebl">
-        <li>Provided hands-on Linux support — diagnosing and resolving OS-level system failures efficiently.</li>
-        <li>Configured and maintained mail servers (SMTP, IMAP, POP3) — troubleshooting delivery and connectivity issues.</li>
-        <li>Administered Linux environments: users, permissions, services, and system health.</li>
-        <li>Responded to technical incidents, reducing resolution time through structured runbooks.</li>
-        <li>Documented configurations and SOPs, improving knowledge base for the engineering team.</li>
+        <li>Designed and managed CI/CD pipelines using GitHub Actions for development and production environments.</li>
+        <li>Automated frontend and backend build and deployment processes, improving release efficiency and reducing manual effort.</li>
+        <li>Managed AWS infrastructure including EC2, DynamoDB, IAM, and CloudWatch for secure and scalable application deployments.</li>
+        <li>Provisioned and maintained development and production servers, databases, and deployment environments.</li>
+        <li>Administered Linux and Plesk servers, configured Nginx, and performed infrastructure monitoring and troubleshooting.</li>
+        <li>Implemented backup and disaster recovery strategies to ensure application availability and business continuity.</li>
+        <li>Collaborated with development teams to optimize deployment workflows and support SaaS platform operations.</li>
       </ul>
       <div class="etags">
-        <span class="etag">Linux Admin</span>
-        <span class="etag">Windows OS</span>
-        <span class="etag">Mail Config</span>
-        <span class="etag">SMTP/IMAP/POP3</span>
-        <span class="etag">Troubleshooting</span>
-        <span class="etag">SLA</span>
+        <span class="etag">GitHub Actions</span>
+        <span class="etag">AWS EC2</span>
+        <span class="etag">DynamoDB</span>
+        <span class="etag">Linux</span>
+        <span class="etag">Plesk</span>
+        <span class="etag">Nginx</span>
+        <span class="etag">Docker</span>
+        <span class="etag">IAM</span>
+        <span class="etag">CloudWatch</span>
+        <span class="etag">Backup/DR</span>
       </div>
     </div>
+
+    <!-- AWS RESTART -->
     <div class="ec reveal">
-      <div class="ep">2025 · AWS re/Start Program</div>
+      <div class="ep">Jul 2025 – Sep 2025 · AWS re/Start</div>
       <div class="er">Cloud Engineering Trainee</div>
-      <div class="eco">AWS re/Start Bootcamp · Remote</div>
+      <div class="eco">AWS re/Start Bootcamp · Remote / Madurai, Tamil Nadu</div>
       <ul class="ebl">
-        <li>Completed intensive AWS training: EC2, S3, VPC, IAM, RDS, Lambda, CloudWatch, API Gateway.</li>
+        <li>Completed an intensive 12-week, full-time cloud computing program focused on AWS services, Linux, networking, and security.</li>
         <li>Built real-world 3-tier and serverless architectures in AWS lab environments.</li>
         <li>Earned AWS Certified Cloud Practitioner during the program.</li>
         <li>Practiced DevOps toolchain: Docker, Git, Jenkins, Kubernetes, SonarQube, Trivy.</li>
-        <li>Developed strong foundation in cloud security, networking, and monitoring practices.</li>
+        <li>Gained hands-on experience preparing for cloud roles: Cloud Support Associate, Systems Administrator, DevOps Engineer.</li>
       </ul>
       <div class="etags">
         <span class="etag">AWS</span>
         <span class="etag">Docker</span>
         <span class="etag">Kubernetes</span>
         <span class="etag">Jenkins</span>
+        <span class="etag">SonarQube</span>
+        <span class="etag">Trivy</span>
         <span class="etag">CloudWatch</span>
         <span class="etag">IAM</span>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -365,107 +381,152 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
 <section id="projects">
   <div class="eye">03 / Projects</div>
   <h2 class="sec-t reveal">Featured Work</h2>
-  <p class="sec-s reveal">Production-grade projects showcasing DevSecOps, cloud architecture, and Linux skills.</p>
+  <p class="sec-s reveal">Production systems and personal projects showcasing DevOps, cloud, and security skills.</p>
   <div class="pg">
 
-    <!-- FEATURED -->
+    <!-- PROJECT 1 - NextGen LMS -->
     <div class="pc feat reveal">
       <div class="ph">
-        <div class="pic">🔐</div>
-        <span class="pbadge" style="background:rgba(57,255,20,.07);color:#39ff14;border:1px solid rgba(57,255,20,.15)">⭐ Featured Project</span>
+        <div class="pic">🎓</div>
+        <span class="pbadge" style="background:rgba(57,255,20,.07);color:#39ff14;border:1px solid rgba(57,255,20,.15)">⭐ Production · Mar 2026</span>
       </div>
-      <div class="pn">DevSecOps CI/CD Pipeline — Multi-Tier NodeJS Application</div>
-      <div class="pd">End-to-end secure pipeline: static analysis → secrets detection → container scanning → automated multi-container deployment on AWS EC2.</div>
+      <div class="pn">NextGen LMS — CI/CD Automated Deployment</div>
+      <div class="pd">End-to-end GitHub Actions CI/CD for a live Learning Management System — automated builds, deployments, and server management on Linux + Plesk across dev and production environments.</div>
       <div class="pipe">
         <div class="ps"><div class="pb" style="background:rgba(167,139,250,.1);color:#a78bfa;border:1px solid rgba(167,139,250,.2)">GitHub</div><div class="pa">→</div></div>
-        <div class="ps"><div class="pb" style="background:rgba(0,229,255,.1);color:#00e5ff;border:1px solid rgba(0,229,255,.2)">Jenkins</div><div class="pa">→</div></div>
-        <div class="ps"><div class="pb" style="background:rgba(255,107,53,.1);color:#ff6b35;border:1px solid rgba(255,107,53,.2)">SonarQube</div><div class="pa">→</div></div>
-        <div class="ps"><div class="pb" style="background:rgba(255,51,102,.1);color:#ff3366;border:1px solid rgba(255,51,102,.2)">GitLeaks</div><div class="pa">→</div></div>
-        <div class="ps"><div class="pb" style="background:rgba(255,149,0,.1);color:#ff9500;border:1px solid rgba(255,149,0,.2)">Trivy</div><div class="pa">→</div></div>
-        <div class="ps"><div class="pb" style="background:rgba(13,183,237,.1);color:#0db7ed;border:1px solid rgba(13,183,237,.2)">Docker</div><div class="pa">→</div></div>
-        <div class="ps"><div class="pb" style="background:rgba(13,183,237,.1);color:#0db7ed;border:1px solid rgba(13,183,237,.2)">DockerHub</div><div class="pa">→</div></div>
+        <div class="ps"><div class="pb" style="background:rgba(0,229,255,.1);color:#00e5ff;border:1px solid rgba(0,229,255,.2)">GH Actions</div><div class="pa">→</div></div>
+        <div class="ps"><div class="pb" style="background:rgba(57,255,20,.1);color:#39ff14;border:1px solid rgba(57,255,20,.2)">Docker</div><div class="pa">→</div></div>
+        <div class="ps"><div class="pb" style="background:rgba(255,149,0,.1);color:#ff9500;border:1px solid rgba(255,149,0,.2)">Plesk/Linux</div><div class="pa">→</div></div>
+        <div class="ps"><div class="pb" style="background:rgba(13,183,237,.1);color:#0db7ed;border:1px solid rgba(13,183,237,.2)">Nginx</div><div class="pa">→</div></div>
         <div class="ps"><div class="pb" style="background:rgba(57,255,20,.1);color:#39ff14;border:1px solid rgba(57,255,20,.2)">Deploy 🚀</div></div>
       </div>
       <ul class="pbuls">
-        <li>Designed end-to-end CI/CD with Jenkins + GitHub integration</li>
-        <li>SonarQube static analysis with Quality Gate enforcement</li>
-        <li>GitLeaks secrets detection during CI stage</li>
-        <li>Trivy scanning for filesystem &amp; Docker image vulnerabilities</li>
-        <li>Multi-stage Dockerfile for React frontend (optimized image size)</li>
-        <li>Docker Compose: Frontend + Backend + MySQL deployment</li>
-        <li>Automated DockerHub image build, scan &amp; push via Jenkins</li>
+        <li>Designed and maintained GitHub Actions workflows for automated build, test, and deployment across dev and production</li>
+        <li>Managed Linux and Plesk-hosted servers, ensuring application availability and deployment reliability</li>
+        <li>Automated frontend and backend deployments, reducing manual release effort and improving consistency</li>
+        <li>Monitored build pipelines, investigated failures, and resolved production issues to minimize downtime</li>
+        <li>Collaborated with development teams on branching strategies, release workflows, and environment management</li>
+        <li>Performed server health monitoring, log analysis, and troubleshooting for stable application performance</li>
+      </ul>
+      <div class="plinks">
+        <a href="https://nextgentechnologies.org" target="_blank" class="plink primary">🌐 nextgentechnologies.org</a>
+        <a href="https://portal.nextgentechnologies.org" target="_blank" class="plink">⚙ portal.nextgentechnologies.org</a>
+      </div>
+      <div class="pstack">
+        <span class="stag" style="color:#a78bfa;border-color:rgba(167,139,250,.15)">GitHub Actions</span>
+        <span class="stag" style="color:#0db7ed;border-color:rgba(13,183,237,.15)">Docker</span>
+        <span class="stag" style="color:#39ff14;border-color:rgba(57,255,20,.15)">MySQL</span>
+        <span class="stag" style="color:#00e5ff;border-color:rgba(0,229,255,.15)">Nginx</span>
+        <span class="stag">Linux</span>
+        <span class="stag">Plesk</span>
+        <span class="stag">CI/CD</span>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 - OfficeTime HRMS -->
+    <div class="pc reveal" style="grid-column:span 2">
+      <div class="ph">
+        <div class="pic" style="background:rgba(255,149,0,.08);border-color:rgba(255,149,0,.15)">🏢</div>
+        <span class="pbadge" style="background:rgba(255,149,0,.07);color:#ff9500;border:1px solid rgba(255,149,0,.15)">Production · May 2026</span>
+      </div>
+      <div class="pn">OfficeTime HRMS — DevOps &amp; Infra Management</div>
+      <div class="pd">Full DevOps ownership of a production HRMS SaaS — CI/CD pipelines, AWS infrastructure, GitHub repo management, and automated deployments across dev and production.</div>
+      <div style="display:flex;align-items:center;gap:3px;margin-bottom:.9rem;font-size:.58rem;flex-wrap:wrap">
+        <div style="padding:.2rem .5rem;border-radius:2px;background:rgba(167,139,250,.09);color:#a78bfa;border:1px solid rgba(167,139,250,.18)">GitHub</div>
+        <span style="color:#374151">→</span>
+        <div style="padding:.2rem .5rem;border-radius:2px;background:rgba(0,229,255,.09);color:#00e5ff;border:1px solid rgba(0,229,255,.18)">GH Actions</div>
+        <span style="color:#374151">→</span>
+        <div style="padding:.2rem .5rem;border-radius:2px;background:rgba(255,149,0,.09);color:#ff9500;border:1px solid rgba(255,149,0,.18)">AWS EC2</div>
+        <span style="color:#374151">→</span>
+        <div style="padding:.2rem .5rem;border-radius:2px;background:rgba(57,255,20,.08);color:#39ff14;border:1px solid rgba(57,255,20,.18)">DynamoDB</div>
+        <span style="color:#374151">→</span>
+        <div style="padding:.2rem .5rem;border-radius:2px;background:rgba(13,183,237,.08);color:#0db7ed;border:1px solid rgba(13,183,237,.18)">Nginx/Plesk</div>
+      </div>
+      <ul class="pbuls">
+        <li>Managed CI/CD pipelines using GitHub Actions for development and production HRMS deployments</li>
+        <li>Handled GitHub repository management, version control, and deployment processes for smooth application releases</li>
+        <li>Automated deployment workflows to reduce manual work and improve release efficiency</li>
+        <li>Worked closely with developers to maintain application stability and support continuous delivery</li>
+      </ul>
+      <div class="plinks">
+        <a href="https://officetime.io" target="_blank" class="plink primary">🌐 officetime.io</a>
+        <a href="https://hrms.officetime.io" target="_blank" class="plink">⚙ hrms.officetime.io</a>
+      </div>
+      <div class="pstack">
+        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.18)">AWS EC2</span>
+        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.18)">DynamoDB</span>
+        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.18)">IAM</span>
+        <span class="stag" style="color:#a78bfa;border-color:rgba(167,139,250,.15)">GitHub Actions</span>
+        <span class="stag">Linux</span><span class="stag">Plesk</span><span class="stag">Nginx</span><span class="stag">CI/CD</span>
+      </div>
+    </div>
+
+    <!-- PROJECT 3 - DevSecOps Pipeline -->
+    <div class="pc reveal">
+      <div class="ph">
+        <div class="pic" style="background:rgba(255,51,102,.07);border-color:rgba(255,51,102,.12)">🔐</div>
+        <span class="pbadge" style="background:rgba(0,229,255,.06);color:#00e5ff;border:1px solid rgba(0,229,255,.15)">Personal</span>
+      </div>
+      <div class="pn">DevSecOps CI/CD Pipeline — NodeJS App</div>
+      <div class="pd">Secure pipeline: static analysis → secrets detection → container scanning → automated multi-container deployment on AWS EC2.</div>
+      <ul class="pbuls">
+        <li>Jenkins + GitHub integration with SonarQube Quality Gate</li>
+        <li>GitLeaks secrets detection &amp; Trivy container scanning</li>
+        <li>Docker Compose: React + Backend + MySQL deployment</li>
         <li>Trivy reports archived as build artifacts for compliance</li>
       </ul>
       <div class="pstack">
         <span class="stag" style="color:#00e5ff;border-color:rgba(0,229,255,.15)">Jenkins</span>
-        <span class="stag" style="color:#a78bfa;border-color:rgba(167,139,250,.15)">GitHub</span>
         <span class="stag" style="color:#ff6b35;border-color:rgba(255,107,53,.15)">SonarQube</span>
         <span class="stag" style="color:#ff3366;border-color:rgba(255,51,102,.15)">GitLeaks</span>
         <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.15)">Trivy</span>
         <span class="stag" style="color:#0db7ed;border-color:rgba(13,183,237,.15)">Docker</span>
-        <span class="stag" style="color:#0db7ed;border-color:rgba(13,183,237,.15)">Docker Compose</span>
-        <span class="stag">NodeJS</span>
-        <span class="stag">MySQL</span>
         <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.15)">AWS EC2</span>
       </div>
     </div>
 
-    <!-- PROJECT 2 -->
+    <!-- PROJECT 4 - 3-Tier AWS -->
     <div class="pc reveal">
       <div class="ph">
-        <div class="pic" style="background:rgba(255,149,0,.08);border-color:rgba(255,149,0,.15)">🏗️</div>
-        <span class="pbadge" style="background:rgba(167,139,250,.07);color:#a78bfa;border:1px solid rgba(167,139,250,.15)">Sep 2025</span>
+        <div class="pic" style="background:rgba(255,149,0,.07);border-color:rgba(255,149,0,.12)">🏗️</div>
+        <span class="pbadge" style="background:rgba(167,139,250,.07);color:#a78bfa;border:1px solid rgba(167,139,250,.15)">Personal</span>
       </div>
       <div class="pn">Three-Tier Architecture on AWS</div>
-      <div class="pd">Highly available 3-tier app on AWS with public/private subnets, Auto Scaling, Load Balancer, RDS, and full CloudWatch observability.</div>
-      <div style="display:flex;align-items:center;gap:3px;margin-bottom:.9rem;font-size:.58rem;flex-wrap:wrap">
-        <div style="padding:.2rem .5rem;border-radius:2px;background:rgba(107,114,128,.1);color:#6b7280;border:1px solid rgba(107,114,128,.18)">Internet</div>
-        <span style="color:#374151">→</span>
-        <div style="padding:.2rem .5rem;border-radius:2px;background:rgba(0,229,255,.09);color:#00e5ff;border:1px solid rgba(0,229,255,.18)">LB</div>
-        <span style="color:#374151">→</span>
-        <div style="padding:.2rem .5rem;border-radius:2px;background:rgba(167,139,250,.09);color:#a78bfa;border:1px solid rgba(167,139,250,.18)">Web EC2</div>
-        <span style="color:#374151">→</span>
-        <div style="padding:.2rem .5rem;border-radius:2px;background:rgba(57,255,20,.08);color:#39ff14;border:1px solid rgba(57,255,20,.18)">App EC2</div>
-        <span style="color:#374151">→</span>
-        <div style="padding:.2rem .5rem;border-radius:2px;background:rgba(255,107,53,.08);color:#ff6b35;border:1px solid rgba(255,107,53,.18)">RDS</div>
-      </div>
-      <ul style="list-style:none;margin-bottom:.9rem">
-        <li style="font-size:.7rem;color:rgba(232,234,240,.55);padding-left:.8em;position:relative;margin-bottom:.3rem"><span style="position:absolute;left:0;color:#39ff14;font-size:.58rem">▸</span>Public/private subnets with secure segmentation</li>
-        <li style="font-size:.7rem;color:rgba(232,234,240,.55);padding-left:.8em;position:relative;margin-bottom:.3rem"><span style="position:absolute;left:0;color:#39ff14;font-size:.58rem">▸</span>Auto Scaling + Load Balancer for traffic spikes</li>
-        <li style="font-size:.7rem;color:rgba(232,234,240,.55);padding-left:.8em;position:relative;margin-bottom:.3rem"><span style="position:absolute;left:0;color:#39ff14;font-size:.58rem">▸</span>IAM least-privilege roles &amp; security groups</li>
-        <li style="font-size:.7rem;color:rgba(232,234,240,.55);padding-left:.8em;position:relative"><span style="position:absolute;left:0;color:#39ff14;font-size:.58rem">▸</span>CloudWatch dashboards &amp; alarms for observability</li>
+      <div class="pd">Highly available 3-tier app on AWS with public/private subnets, Auto Scaling, Load Balancer, RDS, and CloudWatch observability.</div>
+      <ul class="pbuls">
+        <li>Public/private subnets with secure segmentation</li>
+        <li>Auto Scaling + Load Balancer for traffic spikes</li>
+        <li>IAM least-privilege roles &amp; security groups</li>
+        <li>CloudWatch dashboards &amp; alarms</li>
       </ul>
       <div class="pstack">
         <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.18)">EC2</span>
         <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.18)">RDS</span>
-        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.18)">S3</span>
         <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.18)">VPC</span>
-        <span class="stag">CloudWatch</span><span class="stag">IAM</span><span class="stag">Load Balancer</span>
+        <span class="stag">CloudWatch</span><span class="stag">IAM</span><span class="stag">ALB</span>
       </div>
     </div>
 
-    <!-- PROJECT 3 -->
+    <!-- PROJECT 5 - Linux Mail -->
     <div class="pc reveal">
       <div class="ph">
-        <div class="pic" style="background:rgba(57,255,20,.07);border-color:rgba(57,255,20,.12)">🖥️</div>
-        <span class="pbadge" style="background:rgba(57,255,20,.06);color:#39ff14;border:1px solid rgba(57,255,20,.15)">Support</span>
+        <div class="pic" style="background:rgba(57,255,20,.06);border-color:rgba(57,255,20,.12)">🖥️</div>
+        <span class="pbadge" style="background:rgba(57,255,20,.06);color:#39ff14;border:1px solid rgba(57,255,20,.15)">Personal</span>
       </div>
-      <div class="pn">Linux &amp; Mail Server Administration</div>
-      <div class="pd">9 months of hands-on technical support — Linux system admin, OS configuration, and complete mail server setup and troubleshooting in production environments.</div>
-      <ul style="list-style:none;margin-bottom:.9rem">
-        <li style="font-size:.7rem;color:rgba(232,234,240,.55);padding-left:.8em;position:relative;margin-bottom:.3rem"><span style="position:absolute;left:0;color:#39ff14;font-size:.58rem">▸</span>Configured SMTP, IMAP, POP3 mail servers end-to-end</li>
-        <li style="font-size:.7rem;color:rgba(232,234,240,.55);padding-left:.8em;position:relative;margin-bottom:.3rem"><span style="position:absolute;left:0;color:#39ff14;font-size:.58rem">▸</span>Linux admin: users, groups, permissions, services, cron</li>
-        <li style="font-size:.7rem;color:rgba(232,234,240,.55);padding-left:.8em;position:relative;margin-bottom:.3rem"><span style="position:absolute;left:0;color:#39ff14;font-size:.58rem">▸</span>OS-level diagnosis in Windows &amp; Linux environments</li>
-        <li style="font-size:.7rem;color:rgba(232,234,240,.55);padding-left:.8em;position:relative"><span style="position:absolute;left:0;color:#39ff14;font-size:.58rem">▸</span>Maintained SLA docs and operational runbooks</li>
+      <div class="pn">Linux &amp; Mail Server Lab</div>
+      <div class="pd">End-to-end Linux system administration and mail server configuration covering SMTP, IMAP, and POP3 in a self-hosted environment.</div>
+      <ul class="pbuls">
+        <li>Configured SMTP, IMAP, POP3 mail servers</li>
+        <li>Linux admin: users, groups, permissions, cron</li>
+        <li>OS-level diagnosis in Windows &amp; Linux</li>
+        <li>Maintained SLA docs and operational runbooks</li>
       </ul>
       <div class="pstack">
         <span class="stag" style="color:#39ff14;border-color:rgba(57,255,20,.18)">Linux</span>
-        <span class="stag">Windows</span>
         <span class="stag">SMTP</span>
         <span class="stag">IMAP</span>
         <span class="stag">POP3</span>
         <span class="stag">Bash</span>
-        <span class="stag">SLA Docs</span>
       </div>
     </div>
 
@@ -481,11 +542,34 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
       <div class="scat-t">Cloud Platforms</div>
       <div class="sr">
         <div class="sp"><span class="sp-d" style="background:#ff9500"></span>AWS (Certified)</div>
-        <div class="sp"><span class="sp-d" style="background:#0078d4"></span>Azure Basics</div>
         <div class="sp"><span class="sp-d" style="background:#ff9500"></span>EC2 · S3 · RDS</div>
+        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>DynamoDB</div>
         <div class="sp"><span class="sp-d" style="background:#ff9500"></span>VPC · IAM · KMS</div>
         <div class="sp"><span class="sp-d" style="background:#ff9500"></span>CloudWatch</div>
         <div class="sp"><span class="sp-d" style="background:#ff9500"></span>Lambda · API Gateway</div>
+        <div class="sp"><span class="sp-d" style="background:#0078d4"></span>Azure Basics</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="scat-t">CI/CD &amp; DevOps</div>
+      <div class="sr">
+        <div class="sp"><span class="sp-d" style="background:#a78bfa"></span>GitHub Actions</div>
+        <div class="sp"><span class="sp-d" style="background:#d33833"></span>Jenkins</div>
+        <div class="sp"><span class="sp-d" style="background:#fff"></span>Git / GitHub</div>
+        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>CI/CD Pipeline Design</div>
+        <div class="sp"><span class="sp-d" style="background:#39ff14"></span>Deployment Automation</div>
+        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>Release Management</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="scat-t">Infrastructure &amp; Servers</div>
+      <div class="sr">
+        <div class="sp"><span class="sp-d" style="background:#39ff14"></span>Linux Administration</div>
+        <div class="sp"><span class="sp-d" style="background:#00c776"></span>Plesk</div>
+        <div class="sp"><span class="sp-d" style="background:#009639"></span>Nginx / Reverse Proxy</div>
+        <div class="sp"><span class="sp-d" style="background:#0078d4"></span>Windows OS</div>
+        <div class="sp"><span class="sp-d" style="background:#ff6b35"></span>Server Provisioning</div>
+        <div class="sp"><span class="sp-d" style="background:#a78bfa"></span>Backup &amp; Disaster Recovery</div>
       </div>
     </div>
     <div class="reveal">
@@ -494,41 +578,29 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
         <div class="sp"><span class="sp-d" style="background:#0db7ed"></span>Docker</div>
         <div class="sp"><span class="sp-d" style="background:#326ce5"></span>Kubernetes</div>
         <div class="sp"><span class="sp-d" style="background:#0db7ed"></span>Docker Compose</div>
-        <div class="sp"><span class="sp-d" style="background:#326ce5"></span>kubectl</div>
         <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>Multi-stage Builds</div>
       </div>
     </div>
     <div class="reveal">
-      <div class="scat-t">CI/CD &amp; DevSecOps</div>
+      <div class="scat-t">Security &amp; DevSecOps</div>
       <div class="sr">
-        <div class="sp"><span class="sp-d" style="background:#d33833"></span>Jenkins</div>
-        <div class="sp"><span class="sp-d" style="background:#fff"></span>GitHub / Git</div>
         <div class="sp"><span class="sp-d" style="background:#4e9bcd"></span>SonarQube</div>
         <div class="sp"><span class="sp-d" style="background:#ff3366"></span>GitLeaks</div>
         <div class="sp"><span class="sp-d" style="background:#1904da"></span>Trivy</div>
-        <div class="sp"><span class="sp-d" style="background:#a78bfa"></span>Quality Gates</div>
+        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>IAM Roles &amp; Policies</div>
+        <div class="sp"><span class="sp-d" style="background:#a78bfa"></span>Security Groups</div>
+        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>Vulnerability Scanning</div>
       </div>
     </div>
     <div class="reveal">
-      <div class="scat-t">Systems &amp; Networking</div>
+      <div class="scat-t">Networking &amp; Monitoring</div>
       <div class="sr">
-        <div class="sp"><span class="sp-d" style="background:#39ff14"></span>Linux Administration</div>
-        <div class="sp"><span class="sp-d" style="background:#0078d4"></span>Windows OS</div>
-        <div class="sp"><span class="sp-d" style="background:#a78bfa"></span>Mail Config (SMTP/IMAP/POP3)</div>
+        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>DNS · HTTP/HTTPS</div>
         <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>VPC · Subnets · IGW · NAT</div>
-        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>Route Tables · DNS · TCP/IP</div>
-        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>Load Balancer</div>
-      </div>
-    </div>
-    <div class="reveal">
-      <div class="scat-t">Monitoring &amp; Security</div>
-      <div class="sr">
+        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>Load Balancers</div>
         <div class="sp"><span class="sp-d" style="background:#ff9500"></span>CloudWatch</div>
         <div class="sp"><span class="sp-d" style="background:#e6522c"></span>Prometheus</div>
         <div class="sp"><span class="sp-d" style="background:#f46800"></span>Grafana</div>
-        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>IAM Roles &amp; Policies</div>
-        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>KMS</div>
-        <div class="sp"><span class="sp-d" style="background:#a78bfa"></span>Security Groups</div>
       </div>
     </div>
   </div>
@@ -548,7 +620,7 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
     <div class="cc reveal">
       <span class="ce">🚀</span>
       <div class="cn">AWS re/Start Graduate</div>
-      <div class="ci">Amazon Web Services</div>
+      <div class="ci">Amazon Web Services · 12-week intensive program</div>
       <span class="cd">Sep 2025</span>
     </div>
     <div class="cc reveal" style="border-color:rgba(167,139,250,.1)">
@@ -595,7 +667,7 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
 
 <!-- FOOTER -->
 <footer>
-  <span>© 2025 Mohamed Adeep</span>
+  <span>© 2026 Mohamed Adeep</span>
   <span>DevOps <span class="fd">·</span> Cloud <span class="fd">·</span> Linux</span>
   <span>Built with <span class="fd">♥</span> — GitHub Pages Ready</span>
 </footer>
@@ -612,13 +684,22 @@ document.querySelectorAll('a,.sp,.pc,.ec,.cc,.hi,.sri').forEach(el=>{
 });
 
 // TYPEWRITER
-const lines=['whoami → DevOps & Cloud Engineer','docker build -t adeep/devsecops .','kubectl apply -f k8s/deployment.yaml','terraform apply --auto-approve','ssh ubuntu@ec2 -i adeep-key.pem','systemctl status postfix','jenkins --run pipeline.groovy'];
+const lines=[
+  'git push origin main → deploy triggered',
+  'github-actions: pipeline ✓ passed',
+  'aws ec2 describe-instances --region ap-south-1',
+  'nginx -t && systemctl reload nginx',
+  'docker build -t adeep/app . && docker push',
+  'plesk bin server_pref --update',
+  'aws cloudwatch put-metric-alarm ...',
+  'kubectl apply -f k8s/deployment.yaml'
+];
 let li=0,ci=0,del=false;
 const twEl=document.getElementById('tw');
 function type(){
   const l=lines[li];
-  if(!del){twEl.textContent=l.slice(0,++ci);if(ci===l.length){del=true;setTimeout(type,1900);return}setTimeout(type,52)}
-  else{twEl.textContent=l.slice(0,--ci);if(ci===0){del=false;li=(li+1)%lines.length;setTimeout(type,420);return}setTimeout(type,24)}
+  if(!del){twEl.textContent=l.slice(0,++ci);if(ci===l.length){del=true;setTimeout(type,1900);return}setTimeout(type,48)}
+  else{twEl.textContent=l.slice(0,--ci);if(ci===0){del=false;li=(li+1)%lines.length;setTimeout(type,380);return}setTimeout(type,22)}
 }
 type();
 
