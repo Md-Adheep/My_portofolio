@@ -145,6 +145,15 @@ section{padding:7rem 3.5rem}
 .pbuls{list-style:none;margin-bottom:.9rem}
 .pbuls li{font-size:.7rem;color:rgba(232,234,240,.55);padding-left:.8em;position:relative;line-height:1.75;margin-bottom:.2rem}
 .pbuls li::before{content:'▸';position:absolute;left:0;color:var(--green);font-size:.58rem}
+.pc.feat{grid-column:span 3;border-color:rgba(0,229,255,.18)}
+.pipe{display:flex;align-items:center;gap:3px;margin-bottom:.9rem;flex-wrap:wrap}
+.ps{display:flex;align-items:center;gap:3px;flex-shrink:0}
+.pb{font-size:.56rem;padding:.18rem .48rem;border-radius:2px;letter-spacing:.04em;white-space:nowrap}
+.pa{color:var(--muted);font-size:.62rem}
+.pbadge.live{position:relative;display:inline-flex;align-items:center;gap:.4rem}
+.pbadge.live::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 2s infinite}
+.live-text{background:linear-gradient(90deg,var(--green),var(--cyan),var(--green));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s linear infinite;font-weight:700}
+@keyframes shimmer{0%{background-position:0% center}100%{background-position:200% center}}
 .plinks{display:flex;gap:.6rem;margin-top:1rem;flex-wrap:wrap}
 .plink{display:inline-flex;align-items:center;gap:.4rem;font-size:.62rem;padding:.3rem .75rem;border-radius:2px;border:1px solid var(--border);color:var(--muted);text-decoration:none;letter-spacing:.06em;transition:all .2s}
 .plink:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-1px)}
@@ -200,6 +209,7 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
   section{padding:5rem 1.5rem}
   .ag{grid-template-columns:1fr}
   .pg{grid-template-columns:1fr}
+  .pc.feat{grid-column:span 1}
   footer{flex-direction:column;gap:.5rem;text-align:center}
   .h-stats{flex-wrap:wrap;gap:1.5rem}
 }
@@ -236,9 +246,9 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
       Mohamed
       <span class="hl">Adeep</span>
     </h1>
-    <p class="h-role"><em>CI/CD</em> · <em>Cloud</em> · <em>Linux</em> · <em>Docker</em> · <em>AWS</em></p>
+    <p class="h-role"><em>Cloud</em> · <em>Kubernetes</em> · <em>CI/CD</em> · <em>Terraform</em> · <em>Automation</em></p>
     <div class="tw-box"><span><span id="tw"></span></span><span class="cb"></span></div>
-    <p class="h-desc">DevOps Engineer with 2.5+ years of hands-on experience at Tata Consultancy Services (TCS), designing CI/CD pipelines, provisioning Infrastructure-as-Code with Terraform, orchestrating containers on Kubernetes, and managing cloud infrastructure on AWS across banking and enterprise domains — GitHub Actions, Terraform, Kubernetes, and AWS every day.</p>
+    <p class="h-desc">DevOps Engineer with 2.5+ years of experience at Tata Consultancy Services (TCS) in cloud infrastructure management, CI/CD automation, containerization, infrastructure as code, and application deployment across AWS, Azure, GCP, and hybrid environments — Terraform, Ansible, Docker, Kubernetes, Jenkins, GitLab CI/CD, and GitOps every day.</p>
     <div class="h-btns">
       <a href="#projects" class="btn btn-p">View Projects ↓</a>
       <a href="#contact" class="btn btn-g">Get In Touch</a>
@@ -246,8 +256,8 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
     <div class="h-stats">
       <div class="st"><span class="st-n">2.5+</span><span class="st-l">Years Exp</span></div>
       <div class="st"><span class="st-n">15+</span><span class="st-l">CI/CD Pipelines</span></div>
-      <div class="st"><span class="st-n">15+</span><span class="st-l">Microservices</span></div>
-      <div class="st"><span class="st-n">2</span><span class="st-l">AWS Certs</span></div>
+      <div class="st"><span class="st-n">70%</span><span class="st-l">Faster Setup</span></div>
+      <div class="st"><span class="st-n">95%</span><span class="st-l">Release Success</span></div>
     </div>
   </div>
 
@@ -263,23 +273,23 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
         <br/>
         <div class="tl"><span class="tp">❯</span><span class="tc">cat profile.yaml</span></div>
         <div class="tl"><span class="to tpu">cicd:</span></div>
-        <div class="tl"><span class="to" style="padding-left:1.6rem">- GitHub Actions · Jenkins · GitLab · Release Mgmt</span></div>
+        <div class="tl"><span class="to" style="padding-left:1.6rem">- Jenkins · GitLab CI/CD · GitHub Actions · Argo CD</span></div>
         <div class="tl"><span class="to tpu">iac:</span></div>
-        <div class="tl"><span class="to" style="padding-left:1.6rem">- Terraform · Ansible · GitOps</span></div>
+        <div class="tl"><span class="to" style="padding-left:1.6rem">- Terraform · Ansible · CloudFormation · Bicep</span></div>
         <div class="tl"><span class="to tpu">cloud:</span></div>
-        <div class="tl"><span class="to" style="padding-left:1.6rem">- AWS EC2 · DynamoDB · S3 · IAM · CloudWatch</span></div>
+        <div class="tl"><span class="to" style="padding-left:1.6rem">- AWS · Azure · GCP · Hybrid / On-Prem</span></div>
         <div class="tl"><span class="to tpu">containers:</span></div>
-        <div class="tl"><span class="to" style="padding-left:1.6rem">- Docker · Kubernetes/EKS · Helm · RBAC · Nginx</span></div>
+        <div class="tl"><span class="to" style="padding-left:1.6rem">- Docker · Kubernetes (EKS/AKS/GKE) · Helm · OpenShift</span></div>
         <div class="tl"><span class="to tpu">infra:</span></div>
-        <div class="tl"><span class="to" style="padding-left:1.6rem">- Linux · Plesk · Backup/DR</span></div>
+        <div class="tl"><span class="to" style="padding-left:1.6rem">- Linux · Windows Server · IIS · Networking · SSL/TLS</span></div>
         <div class="tl"><span class="to tpu">devsecops:</span></div>
-        <div class="tl"><span class="to" style="padding-left:1.6rem">- SonarQube · GitLeaks · Trivy · IAM</span></div>
+        <div class="tl"><span class="to" style="padding-left:1.6rem">- SonarQube · Trivy · Snyk · Gitleaks · IAM</span></div>
         <div class="tl"><span class="to tpu">ai-tools:</span></div>
         <div class="tl"><span class="to" style="padding-left:1.6rem">- GitHub Copilot · Amazon Q</span></div>
         <br/>
         <div class="tl"><span class="tp">❯</span><span class="tc">cat certs.txt</span></div>
         <div class="tl"><span class="to"><span class="tor">✓</span> AWS Cloud Practitioner — Sep 2025</span></div>
-        <div class="tl"><span class="to"><span class="tor">✓</span> AWS re/Start Graduate — Sep 2025</span></div>
+        <div class="tl"><span class="to"><span class="tor">✓</span> AWS re/Start Program — Jul–Aug 2025</span></div>
         <br/>
         <div class="tl"><span class="tp">❯</span><span class="tc tg">uptime --check<span class="cb"></span></span></div>
       </div>
@@ -293,16 +303,16 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
   <h2 class="sec-t reveal">Who I Am</h2>
   <div class="ag">
     <div class="at reveal">
-      <p>I'm <span>Mohamed Adeep</span>, a DevOps Engineer based in <span>Chennai, Tamil Nadu</span>. I hold a B.Sc. in Computer Science from HKRH College, Kamaraj University.</p>
-      <p>My DevOps career started early — I joined <span>Tata Consultancy Services (TCS)</span> as a <span>Junior DevOps Engineer</span> while in my second year of college, supporting a digital banking and payment services platform. Based on my performance there, TCS moved me into a full <span>DevOps Engineer</span> role, which I continue in today on an enterprise application deployment and cloud automation platform.</p>
-      <p>That's <span>2.5+ years of continuous DevOps experience with one organisation</span> — designing CI/CD pipelines, provisioning infrastructure with Terraform, orchestrating containers on Kubernetes/EKS, and managing AWS infrastructure for reliable application delivery.</p>
-      <p>I started with the AWS re/Start bootcamp which led to my <span>AWS Cloud Practitioner</span> certification — and now I build and ship production DevOps infrastructure every day, with a mindset of <span>automate everything, monitor everything</span>.</p>
+      <p>I'm <span>Mohamed Adeep</span>, a DevOps Engineer from <span>Theni, Tamil Nadu</span>, open to relocation. I hold a B.Sc. in Computer Science from HKRH College, Madurai Kamaraj University.</p>
+      <p>For the past <span>2.5+ years at Tata Consultancy Services (TCS)</span> I have worked on cloud infrastructure management, CI/CD automation, containerization, infrastructure as code, and application deployment — first on a <span>Digital Banking Cloud &amp; DevOps</span> project and now on a <span>Healthcare Application Cloud &amp; DevOps Platform</span>.</p>
+      <p>I automate infrastructure provisioning with Terraform and Ansible, run containerized workloads on Kubernetes, build CI/CD and GitOps workflows, and implement monitoring and alerting. That work <span>cut environment setup time by 70%</span> and <span>saves about 8 hours of manual effort every week</span>.</p>
+      <p>My approach is simple: <span>automate everything, monitor everything</span> — with a strong focus on cloud networking, security, observability, and reliable delivery.</p>
       <div class="hi-list">
-        <div class="hi"><div class="hi-ic">🏢</div><div><span class="hi-t">DevOps Engineer · TCS (Enterprise Software / IT Services)</span><span class="hi-s">Mar 2025 – Present · Promoted internally · Terraform · Kubernetes/EKS · AWS</span></div></div>
-        <div class="hi"><div class="hi-ic">🏦</div><div><span class="hi-t">Junior DevOps Engineer · TCS (Banking Domain)</span><span class="hi-s">Mar 2024 – Feb 2025 · Started in 2nd year of college · CI/CD · AWS</span></div></div>
+        <div class="hi"><div class="hi-ic">🏢</div><div><span class="hi-t">DevOps Engineer · TCS (Healthcare)</span><span class="hi-s">Mar 2025 – Present · Terraform · Kubernetes/EKS · GitOps · Hybrid Cloud</span></div></div>
+        <div class="hi"><div class="hi-ic">🏦</div><div><span class="hi-t">Junior DevOps Engineer · TCS (Banking)</span><span class="hi-s">Mar 2024 – Feb 2025 · CI/CD · Terraform · Ansible · AWS</span></div></div>
         <div class="hi"><div class="hi-ic">☁️</div><div><span class="hi-t">AWS Certified Cloud Practitioner</span><span class="hi-s">Amazon Web Services · Sep 2025</span></div></div>
-        <div class="hi"><div class="hi-ic">🚀</div><div><span class="hi-t">AWS re/Start Graduate</span><span class="hi-s">Intensive 12-week cloud &amp; DevOps bootcamp · Jul – Nov 2025</span></div></div>
-        <div class="hi"><div class="hi-ic">🔐</div><div><span class="hi-t">DevSecOps Practitioner</span><span class="hi-s">SonarQube · GitLeaks · Trivy · IAM · Vulnerability Scanning</span></div></div>
+        <div class="hi"><div class="hi-ic">🚀</div><div><span class="hi-t">AWS re/Start Program</span><span class="hi-s">Cloud Computing, Networking, Security &amp; Linux · Jul – Aug 2025</span></div></div>
+        <div class="hi"><div class="hi-ic">🔐</div><div><span class="hi-t">DevSecOps Practitioner</span><span class="hi-s">SonarQube · Trivy · Snyk · Gitleaks · Security Quality Gates</span></div></div>
       </div>
     </div>
     <div class="sr-grid reveal">
@@ -310,9 +320,9 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
       <div class="sri"><div class="sri-n">GitHub Actions</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#a78bfa,#00e5ff)" data-w="90%"></div></div><div class="sri-p">90%</div></div>
       <div class="sri"><div class="sri-n">Terraform (IaC)</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#7b42bc,#00e5ff)" data-w="85%"></div></div><div class="sri-p">85%</div></div>
       <div class="sri"><div class="sri-n">Kubernetes</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#326ce5,#00e5ff)" data-w="82%"></div></div><div class="sri-p">82%</div></div>
-      <div class="sri"><div class="sri-n">Linux / Plesk</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#39ff14,#00e5ff)" data-w="88%"></div></div><div class="sri-p">88%</div></div>
+      <div class="sri"><div class="sri-n">Linux / Windows Server</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#39ff14,#00e5ff)" data-w="88%"></div></div><div class="sri-p">88%</div></div>
       <div class="sri"><div class="sri-n">Docker</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#0db7ed,#00e5ff)" data-w="84%"></div></div><div class="sri-p">84%</div></div>
-      <div class="sri"><div class="sri-n">Nginx</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#39ff14,#a78bfa)" data-w="85%"></div></div><div class="sri-p">85%</div></div>
+      <div class="sri"><div class="sri-n">Ansible</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#ee0000,#a78bfa)" data-w="85%"></div></div><div class="sri-p">85%</div></div>
       <div class="sri"><div class="sri-n">Jenkins CI/CD</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#d33833,#a78bfa)" data-w="80%"></div></div><div class="sri-p">80%</div></div>
       <div class="sri"><div class="sri-n">Networking/VPC</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#00e5ff,#ff6b35)" data-w="83%"></div></div><div class="sri-p">83%</div></div>
       <div class="sri"><div class="sri-n">DevSecOps</div><div class="sri-b"><div class="sri-f" style="width:0;background:linear-gradient(90deg,#ff3366,#00e5ff)" data-w="78%"></div></div><div class="sri-p">78%</div></div>
@@ -324,58 +334,67 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
 <section id="experience">
   <div class="eye">02 / Experience</div>
   <h2 class="sec-t reveal">Work History</h2>
-  <p class="sec-s reveal">Two roles at TCS since March 2024 — from a college-time Junior DevOps Engineer to a promoted DevOps Engineer, on one continuous track.</p>
+  <p class="sec-s reveal">Two roles at Tata Consultancy Services (TCS) since March 2024, across healthcare and banking projects.</p>
   <div class="eg">
 
     <!-- CURRENT ROLE -->
     <div class="ec reveal">
-      <div class="ep active">Mar 2025 – Present · Current Role · Promoted from Junior DevOps Engineer</div>
+      <div class="ep active">Mar 2025 – Present · Current Role</div>
       <div class="er">DevOps Engineer</div>
-      <div class="eco">Tata Consultancy Services (TCS) · Enterprise Application Deployment &amp; Cloud Automation Platform · Enterprise Software / IT Services Domain</div>
+      <div class="eco">Tata Consultancy Services (TCS) · Project: Healthcare Application Cloud &amp; DevOps Platform</div>
       <ul class="ebl">
-        <li>Designed and maintained 15+ CI/CD pipelines using Jenkins, Git, GitHub, and GitLab, automating application builds, testing, validation, and deployments across 4 environments.</li>
-        <li>Managed AWS infrastructure supporting 5+ applications across Dev, QA, Staging, and Production using EC2, VPC, IAM, S3, and CloudWatch.</li>
-        <li>Developed and managed 10+ reusable Terraform modules for consistent, repeatable AWS provisioning, cutting new-environment setup time by 70%.</li>
-        <li>Containerized and deployed 15+ microservices using Docker and Kubernetes/Amazon EKS, improving deployment consistency and enabling independent scaling.</li>
-        <li>Managed Kubernetes resources including Deployments, Services, Ingress, ConfigMaps, Secrets, Namespaces, and RBAC across EKS workloads.</li>
-        <li>Automated configuration and operations across 20+ Linux servers using Ansible, Bash, and Python, reducing manual effort by 60% and saving 8 hours per week.</li>
-        <li>Implemented Prometheus, Grafana, and CloudWatch monitoring for 20+ components with ELK Stack logging, achieving 40% faster issue detection and cutting incident investigation time by 50%.</li>
-        <li>Integrated SonarQube, GitLeaks, and Trivy into CI/CD pipelines, enforcing code-quality and security gates and reducing vulnerabilities reaching production by 35%.</li>
-        <li>Ran rolling and blue-green deployments, supporting 10+ production deployments per month at a 95% success rate.</li>
-        <li>Used GitHub Copilot and Amazon Q to accelerate Terraform modules, Kubernetes manifests, YAML configurations, and automation script development.</li>
+        <li>Managed AWS infrastructure, including EC2, VPC, IAM, S3, EKS, and CloudWatch, to support application availability and reliability.</li>
+        <li>Built and maintained 15+ CI/CD pipelines using Jenkins, Git, and GitHub to automate application builds, testing, and deployments.</li>
+        <li>Containerized application microservices using Docker and deployed 15+ workloads on Kubernetes/EKS.</li>
+        <li>Automated infrastructure provisioning with Terraform and server configuration with Ansible, reducing environment setup time by 70%.</li>
+        <li>Supported hybrid and multi-cloud infrastructure across AWS, Azure, GCP, and on-premises environments.</li>
+        <li>Developed GitLab CI/CD workflows to execute Terraform infrastructure changes and Ansible configuration tasks.</li>
+        <li>Implemented GitOps-based deployment workflows using Argo CD and Helm for version-controlled application deployments.</li>
+        <li>Configured AWS Application Load Balancers, Network Load Balancers, and Kubernetes Ingress to support application traffic routing.</li>
+        <li>Managed SSL/TLS certificate issuance, renewal, and rotation using AWS Certificate Manager and configured TLS termination.</li>
+        <li>Administered Kubernetes resources, including Deployments, Services, Ingress, ConfigMaps, Secrets, Namespaces, and RBAC.</li>
+        <li>Automated deployments, health checks, backups, and routine operational tasks using Bash and Linux scripting, saving approximately 8 hours of manual effort per week.</li>
+        <li>Implemented monitoring and alerting using Prometheus, Grafana, and CloudWatch, improving issue detection by 40%.</li>
+        <li>Configured centralized logging using ELK Stack to support troubleshooting and root cause analysis.</li>
+        <li>Integrated security scanning and code quality checks into CI/CD pipelines, contributing to a reported 35% reduction in vulnerabilities.</li>
+        <li>Supported 10+ monthly releases with a reported 95% release success rate.</li>
+        <li>Maintained technical documentation, operational runbooks, and deployment procedures to support incident management and reliable operations.</li>
       </ul>
       <div class="etags">
         <span class="etag">Terraform</span>
-        <span class="etag">Kubernetes/EKS</span>
-        <span class="etag">RBAC</span>
-        <span class="etag">Docker</span>
-        <span class="etag">Jenkins</span>
-        <span class="etag">GitLab</span>
         <span class="etag">Ansible</span>
-        <span class="etag">ELK Stack</span>
+        <span class="etag">Kubernetes/EKS</span>
+        <span class="etag">Helm</span>
+        <span class="etag">Argo CD</span>
+        <span class="etag">GitLab CI/CD</span>
+        <span class="etag">Jenkins</span>
+        <span class="etag">Docker</span>
+        <span class="etag">ALB/NLB</span>
+        <span class="etag">AWS ACM</span>
         <span class="etag">Prometheus</span>
         <span class="etag">Grafana</span>
-        <span class="etag">Blue-Green Deployment</span>
-        <span class="etag">Python</span>
-        <span class="etag">GitHub Copilot</span>
-        <span class="etag">Amazon Q</span>
+        <span class="etag">ELK Stack</span>
+        <span class="etag">Hybrid Cloud</span>
       </div>
     </div>
 
     <!-- PRIOR ROLE -->
     <div class="ec reveal">
-      <div class="ep">Mar 2024 – Feb 2025 · First Role · Joined while in college</div>
+      <div class="ep">Mar 2024 – Feb 2025</div>
       <div class="er">Junior DevOps Engineer</div>
-      <div class="eco">Tata Consultancy Services (TCS) · Digital Banking &amp; Payment Services Platform · Banking Domain</div>
+      <div class="eco">Tata Consultancy Services (TCS) · Project: Digital Banking Cloud &amp; DevOps</div>
       <ul class="ebl">
-        <li>Designed and maintained 10+ Jenkins CI/CD pipelines using Git and GitHub to automate application builds, validations, and deployments for banking applications.</li>
-        <li>Managed AWS infrastructure across Dev, QA, Staging, and Production using EC2, VPC, IAM, S3, and CloudWatch.</li>
-        <li>Containerized and deployed 10+ banking microservices using Docker and Kubernetes/Amazon EKS.</li>
-        <li>Provisioned AWS infrastructure using Terraform, enabling repeatable environment deployments and reducing manual setup time by 60%.</li>
-        <li>Configured 10+ Helm-based releases using ConfigMaps, Secrets, Ingress, and RBAC, standardizing deployments and reducing release configuration errors.</li>
-        <li>Automated configuration, patching, and app setup across 15+ Linux servers using Ansible and shell scripting, reducing manual effort by 50%.</li>
-        <li>Integrated DevSecOps checks into CI/CD workflows and implemented Prometheus, Grafana, and CloudWatch monitoring with centralized logging for 10+ production deployments per month.</li>
-        <li>Used GitHub Copilot and Amazon Q to accelerate Terraform development, Kubernetes manifests, shell scripts, and CI/CD pipeline automation.</li>
+        <li>Managed AWS infrastructure resources, including EC2, VPC, IAM, S3, EKS, and CloudWatch, across application environments.</li>
+        <li>Developed and maintained 10+ CI/CD pipelines using Jenkins, Git, and GitHub to automate application builds, testing, and releases.</li>
+        <li>Containerized microservices using Docker and supported Kubernetes/EKS deployments using Helm.</li>
+        <li>Provisioned cloud infrastructure using Terraform, reducing environment setup time by 60%.</li>
+        <li>Automated server configuration and application deployment across 15+ Linux servers using Ansible and shell scripting, reducing manual effort by 50%.</li>
+        <li>Supported Windows Server administration, including service management, configuration checks, and patching using PowerShell.</li>
+        <li>Implemented monitoring and centralized logging using Prometheus, Grafana, CloudWatch, and ELK Stack.</li>
+        <li>Managed Kubernetes resources, including Deployments, Services, Ingress, ConfigMaps, Secrets, and RBAC.</li>
+        <li>Integrated security scanning and quality checks into CI/CD workflows to improve deployment consistency and security.</li>
+        <li>Automated rolling deployments, health checks, and environment provisioning to improve release reliability.</li>
+        <li>Assisted with deployment troubleshooting, configuration management, and operational automation.</li>
       </ul>
       <div class="etags">
         <span class="etag">Jenkins</span>
@@ -383,14 +402,12 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
         <span class="etag">Ansible</span>
         <span class="etag">Kubernetes/EKS</span>
         <span class="etag">Helm</span>
-        <span class="etag">RBAC</span>
         <span class="etag">Docker</span>
-        <span class="etag">SonarQube</span>
-        <span class="etag">Trivy</span>
+        <span class="etag">Windows Server</span>
+        <span class="etag">PowerShell</span>
         <span class="etag">Prometheus</span>
         <span class="etag">Grafana</span>
-        <span class="etag">GitHub Copilot</span>
-        <span class="etag">Amazon Q</span>
+        <span class="etag">ELK Stack</span>
       </div>
     </div>
 
@@ -404,68 +421,73 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
   <p class="sec-s reveal">Personal projects showcasing CI/CD, Infrastructure-as-Code, container orchestration, and observability.</p>
   <div class="pg">
 
-    <!-- PROJECT 3 - K8s CI/CD -->
+    <!-- PROJECT 1 - DevSecOps pipeline -->
     <div class="pc reveal">
       <div class="ph">
         <div class="pic" style="background:rgba(50,108,229,.08);border-color:rgba(50,108,229,.15)">⚙️</div>
       </div>
-      <div class="pn">CI/CD Pipeline with Containerized Deployment on Kubernetes</div>
-      <div class="pd">End-to-end CI/CD pipeline: GitHub Actions builds and pushes Docker images, deployed to Kubernetes with Nginx Ingress and zero-downtime rolling updates.</div>
+      <div class="pn">End-to-End DevSecOps CI/CD Pipeline on AWS EKS</div>
+      <div class="pd">Jenkins pipeline that tests, scans, builds, and deploys a containerized application to Terraform-provisioned Amazon EKS.</div>
       <ul class="pbuls">
-        <li>GitHub Actions automatically builds, tests, and pushes Docker images on every commit</li>
-        <li>Deployed to Kubernetes with Deployments, Services, and Nginx-based Ingress</li>
-        <li>Rolling updates with readiness/liveness probes for zero-downtime releases</li>
-        <li>Environment-specific config and secrets across dev, staging, and prod namespaces</li>
+        <li>Automated source checkout, testing, security scanning, image creation, and deployment in Jenkins</li>
+        <li>Integrated SonarQube code quality and Trivy vulnerability scanning into the pipeline</li>
+        <li>Implemented rolling updates, automated rollback, and post-deployment smoke tests</li>
+        <li>Improved consistency and repeatability of the application delivery process</li>
       </ul>
+      <div class="plinks"><a href="https://github.com/Md-Adheep/eks-devsecops-cicd-pipeline" target="_blank" class="plink">⚙ View on GitHub</a></div>
       <div class="pstack">
-        <span class="stag" style="color:#a78bfa;border-color:rgba(167,139,250,.15)">GitHub Actions</span>
+        <span class="stag" style="color:#d33833;border-color:rgba(211,56,51,.18)">Jenkins</span>
         <span class="stag" style="color:#0db7ed;border-color:rgba(13,183,237,.15)">Docker</span>
         <span class="stag" style="color:#326ce5;border-color:rgba(50,108,229,.18)">Kubernetes</span>
-        <span class="stag" style="color:#00e5ff;border-color:rgba(0,229,255,.15)">Nginx</span>
-        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.15)">AWS</span>
-      </div>
-    </div>
-
-    <!-- PROJECT 4 - Terraform IaC -->
-    <div class="pc reveal">
-      <div class="ph">
-        <div class="pic" style="background:rgba(123,66,188,.08);border-color:rgba(123,66,188,.15)">🏗️</div>
-      </div>
-      <div class="pn">Infrastructure as Code — AWS Environment Provisioning</div>
-      <div class="pd">Modular Terraform configurations provisioning a complete AWS environment, with Ansible handling post-provisioning configuration.</div>
-      <ul class="pbuls">
-        <li>Modular Terraform provisions VPC, subnets, EC2, RDS, and IAM roles from version-controlled code</li>
-        <li>Terraform remote state and workspaces manage dev, staging, and prod consistently</li>
-        <li>Ansible playbooks automate post-provisioning server and app setup</li>
-        <li>Least-privilege IAM policies and security groups harden the infrastructure</li>
-      </ul>
-      <div class="pstack">
         <span class="stag" style="color:#7b42bc;border-color:rgba(123,66,188,.18)">Terraform</span>
-        <span class="stag" style="color:#ee0000;border-color:rgba(238,0,0,.15)">Ansible</span>
-        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.18)">AWS</span>
-        <span class="stag">Linux</span>
+        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.15)">AWS</span>
+        <span class="stag">SonarQube</span><span class="stag">Trivy</span>
       </div>
     </div>
 
-    <!-- PROJECT 5 - K8s Monitoring -->
+    <!-- PROJECT 2 - K8s Monitoring -->
     <div class="pc reveal">
       <div class="ph">
         <div class="pic" style="background:rgba(230,82,44,.08);border-color:rgba(230,82,44,.15)">📊</div>
       </div>
       <div class="pn">Kubernetes Monitoring &amp; Observability Stack</div>
-      <div class="pd">Prometheus and Grafana deployed on Kubernetes for real-time node, pod, and application-level metrics with custom dashboards and alerting.</div>
+      <div class="pd">Prometheus and Grafana on Kubernetes with a Python service instrumented for custom metrics, alerting, and CI validation.</div>
       <ul class="pbuls">
-        <li>Prometheus + Grafana monitor node, pod, and app-level metrics in real time</li>
-        <li>Custom dashboards visualize CPU, memory, request latency, and error rates</li>
-        <li>Prometheus alerting rules proactively flag resource exhaustion and degradation</li>
-        <li>Centralized log collection speeds up root-cause analysis during incidents</li>
+        <li>Instrumented a Python application with custom metrics for health and performance</li>
+        <li>Configured 10 alert rules and a 15-panel Grafana dashboard</li>
+        <li>Validated the full monitoring stack in CI on a local kind cluster</li>
+        <li>Improved visibility through metrics, dashboards, and alerting</li>
       </ul>
+      <div class="plinks"><a href="https://github.com/Md-Adheep/k8s-monitoring-observability" target="_blank" class="plink">⚙ View on GitHub</a></div>
       <div class="pstack">
+        <span class="stag" style="color:#3776ab;border-color:rgba(55,118,171,.18)">Python</span>
         <span class="stag" style="color:#326ce5;border-color:rgba(50,108,229,.18)">Kubernetes</span>
-        <span class="stag" style="color:#0db7ed;border-color:rgba(13,183,237,.15)">Docker</span>
         <span class="stag" style="color:#e6522c;border-color:rgba(230,82,44,.18)">Prometheus</span>
         <span class="stag" style="color:#f46800;border-color:rgba(244,104,0,.18)">Grafana</span>
-        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.15)">AWS</span>
+        <span class="stag">Helm</span><span class="stag">kind</span>
+      </div>
+    </div>
+
+    <!-- PROJECT 3 - Multi-Cloud IaC -->
+    <div class="pc reveal">
+      <div class="ph">
+        <div class="pic" style="background:rgba(123,66,188,.08);border-color:rgba(123,66,188,.15)">🏗️</div>
+      </div>
+      <div class="pn">Multi-Cloud Infrastructure as Code</div>
+      <div class="pd">Reusable Terraform modules and Ansible roles for repeatable dev, staging, and production environments on AWS and Azure.</div>
+      <ul class="pbuls">
+        <li>Developed six reusable Terraform modules for repeatable environments</li>
+        <li>Configured remote Terraform state management</li>
+        <li>Created Ansible roles for Linux configuration, patching, firewall rules, and SSH hardening</li>
+        <li>Standardized configuration to reduce repetitive manual provisioning</li>
+      </ul>
+      <div class="plinks"><a href="https://github.com/Md-Adheep/multi-cloud-terraform-iac" target="_blank" class="plink">⚙ View on GitHub</a></div>
+      <div class="pstack">
+        <span class="stag" style="color:#7b42bc;border-color:rgba(123,66,188,.18)">Terraform</span>
+        <span class="stag" style="color:#ee0000;border-color:rgba(238,0,0,.15)">Ansible</span>
+        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.18)">AWS</span>
+        <span class="stag" style="color:#0078d4;border-color:rgba(0,120,212,.18)">Azure</span>
+        <span class="stag">Linux</span>
       </div>
     </div>
 
@@ -478,160 +500,133 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
   <h2 class="sec-t reveal">Technical Arsenal</h2>
   <div class="skm">
     <div class="reveal">
-      <div class="scat-t">Cloud Platform</div>
+      <div class="scat-t">Cloud Platforms</div>
       <div class="sr">
-        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>AWS (EC2, S3, IAM, VPC, RDS)</div>
-        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>ELB · Auto Scaling</div>
-        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>CloudWatch · EBS</div>
-        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>Route 53</div>
+        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>AWS</div>
+        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>Microsoft Azure</div>
+        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>Google Cloud (GCP)</div>
+        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>Hybrid Cloud</div>
+        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>On-Premises Infrastructure</div>
       </div>
     </div>
     <div class="reveal">
-      <div class="scat-t">DevOps &amp; CI/CD</div>
+      <div class="scat-t">AWS Services</div>
       <div class="sr">
-        <div class="sp"><span class="sp-d" style="background:#d33833"></span>Jenkins</div>
-        <div class="sp"><span class="sp-d" style="background:#a78bfa"></span>GitHub Actions</div>
-        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>AWS CodePipeline · CodeBuild · CodeDeploy</div>
-        <div class="sp"><span class="sp-d" style="background:#fff"></span>Git · GitHub</div>
+        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>EC2 · EKS · ECS · ECR</div>
+        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>S3 · VPC · IAM · RDS · Lambda</div>
+        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>ALB · NLB · Route 53</div>
+        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>CloudWatch · AWS Certificate Manager</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="scat-t">Azure Services</div>
+      <div class="sr">
+        <div class="sp"><span class="sp-d" style="background:#0078d4"></span>Azure Kubernetes Service (AKS)</div>
+        <div class="sp"><span class="sp-d" style="background:#0078d4"></span>Virtual Machines · VNets</div>
+        <div class="sp"><span class="sp-d" style="background:#0078d4"></span>Azure Monitor</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="scat-t">GCP Services</div>
+      <div class="sr">
+        <div class="sp"><span class="sp-d" style="background:#4285f4"></span>Google Kubernetes Engine (GKE)</div>
+        <div class="sp"><span class="sp-d" style="background:#4285f4"></span>Compute Engine · Cloud Storage</div>
+        <div class="sp"><span class="sp-d" style="background:#4285f4"></span>Artifact Registry</div>
       </div>
     </div>
     <div class="reveal">
       <div class="scat-t">Infrastructure as Code</div>
       <div class="sr">
         <div class="sp"><span class="sp-d" style="background:#7b42bc"></span>Terraform</div>
-        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>AWS CloudFormation</div>
+        <div class="sp"><span class="sp-d" style="background:#7b42bc"></span>Reusable Modules · Remote State</div>
+        <div class="sp"><span class="sp-d" style="background:#7b42bc"></span>Ansible</div>
+        <div class="sp"><span class="sp-d" style="background:#7b42bc"></span>AWS CloudFormation · AWS CDK</div>
+        <div class="sp"><span class="sp-d" style="background:#7b42bc"></span>Azure Bicep</div>
       </div>
     </div>
     <div class="reveal">
-      <div class="scat-t">Configuration Management</div>
+      <div class="scat-t">Containers &amp; Orchestration</div>
       <div class="sr">
-        <div class="sp"><span class="sp-d" style="background:#ee0000"></span>Ansible</div>
+        <div class="sp"><span class="sp-d" style="background:#326ce5"></span>Docker</div>
+        <div class="sp"><span class="sp-d" style="background:#326ce5"></span>Kubernetes (EKS · AKS · GKE)</div>
+        <div class="sp"><span class="sp-d" style="background:#326ce5"></span>OpenShift · Helm</div>
+        <div class="sp"><span class="sp-d" style="background:#326ce5"></span>Deployments · Services · Ingress</div>
+        <div class="sp"><span class="sp-d" style="background:#326ce5"></span>ConfigMaps · Secrets · RBAC</div>
       </div>
     </div>
     <div class="reveal">
-      <div class="scat-t">Containerization</div>
+      <div class="scat-t">CI/CD &amp; GitOps</div>
       <div class="sr">
-        <div class="sp"><span class="sp-d" style="background:#0db7ed"></span>Docker</div>
-        <div class="sp"><span class="sp-d" style="background:#0db7ed"></span>Docker Hub</div>
-        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>Amazon ECR</div>
-      </div>
-    </div>
-    <div class="reveal">
-      <div class="scat-t">Container Orchestration</div>
-      <div class="sr">
-        <div class="sp"><span class="sp-d" style="background:#326ce5"></span>Kubernetes</div>
-        <div class="sp"><span class="sp-d" style="background:#326ce5"></span>Amazon EKS</div>
-      </div>
-    </div>
-    <div class="reveal">
-      <div class="scat-t">Scripting &amp; Programming</div>
-      <div class="sr">
-        <div class="sp"><span class="sp-d" style="background:#3776ab"></span>Python</div>
-        <div class="sp"><span class="sp-d" style="background:#39ff14"></span>Bash / Shell Scripting</div>
-        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>YAML · JSON</div>
-      </div>
-    </div>
-    <div class="reveal">
-      <div class="scat-t">Operating Systems</div>
-      <div class="sr">
-        <div class="sp"><span class="sp-d" style="background:#39ff14"></span>Linux (Ubuntu, Amazon Linux)</div>
-        <div class="sp"><span class="sp-d" style="background:#0078d4"></span>Windows</div>
+        <div class="sp"><span class="sp-d" style="background:#d33833"></span>Jenkins · Jenkins Pipelines</div>
+        <div class="sp"><span class="sp-d" style="background:#d33833"></span>GitLab CI/CD · GitHub Actions</div>
+        <div class="sp"><span class="sp-d" style="background:#d33833"></span>Azure DevOps · Harness</div>
+        <div class="sp"><span class="sp-d" style="background:#d33833"></span>Argo CD · Argo Workflows</div>
       </div>
     </div>
     <div class="reveal">
       <div class="scat-t">Version Control</div>
       <div class="sr">
-        <div class="sp"><span class="sp-d" style="background:#fff"></span>Git · GitHub</div>
-        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>Git Branching · Pull Requests · Merge Strategies</div>
+        <div class="sp"><span class="sp-d" style="background:#ffffff"></span>Git · GitHub · GitLab</div>
+        <div class="sp"><span class="sp-d" style="background:#ffffff"></span>Branching Strategies · Code Integration</div>
       </div>
     </div>
     <div class="reveal">
-      <div class="scat-t">Build &amp; Package Management</div>
+      <div class="scat-t">Operating Systems</div>
       <div class="sr">
-        <div class="sp"><span class="sp-d" style="background:#c71a36"></span>Maven</div>
-        <div class="sp"><span class="sp-d" style="background:#cb3837"></span>npm</div>
+        <div class="sp"><span class="sp-d" style="background:#39ff14"></span>Linux (Ubuntu, RHEL, Amazon Linux)</div>
+        <div class="sp"><span class="sp-d" style="background:#39ff14"></span>Windows Server · IIS Administration</div>
+        <div class="sp"><span class="sp-d" style="background:#39ff14"></span>Server Patching</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="scat-t">Scripting &amp; Automation</div>
+      <div class="sr">
+        <div class="sp"><span class="sp-d" style="background:#3776ab"></span>Bash · Shell Scripting</div>
+        <div class="sp"><span class="sp-d" style="background:#3776ab"></span>Python</div>
+        <div class="sp"><span class="sp-d" style="background:#3776ab"></span>PowerShell</div>
       </div>
     </div>
     <div class="reveal">
       <div class="scat-t">Monitoring &amp; Logging</div>
       <div class="sr">
-        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>AWS CloudWatch</div>
-        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>CloudWatch Logs · Alarms · Dashboards</div>
+        <div class="sp"><span class="sp-d" style="background:#e6522c"></span>Prometheus · Grafana · Alertmanager</div>
+        <div class="sp"><span class="sp-d" style="background:#e6522c"></span>ELK Stack · AWS CloudWatch</div>
+        <div class="sp"><span class="sp-d" style="background:#e6522c"></span>Datadog · Dynatrace · Splunk</div>
       </div>
     </div>
     <div class="reveal">
       <div class="scat-t">Networking</div>
       <div class="sr">
-        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>VPC · Subnets · Route Tables</div>
-        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>Internet Gateway · NAT Gateway</div>
-        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>Security Groups · NACLs</div>
-        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>DNS · Load Balancing</div>
+        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>TCP/IP · DNS · Routing</div>
+        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>VPC · VNets · Security Groups</div>
+        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>Load Balancing · SSL/TLS</div>
+        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>VPN · Firewalls</div>
       </div>
     </div>
     <div class="reveal">
-      <div class="scat-t">Security</div>
+      <div class="scat-t">DevSecOps &amp; Security</div>
       <div class="sr">
-        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>AWS IAM</div>
-        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>IAM Roles &amp; Policies</div>
-        <div class="sp"><span class="sp-d" style="background:#a78bfa"></span>Secrets Management</div>
-        <div class="sp"><span class="sp-d" style="background:#a78bfa"></span>SSH · Least-Privilege Access</div>
+        <div class="sp"><span class="sp-d" style="background:#ff3366"></span>SonarQube · Trivy · Snyk · Gitleaks</div>
+        <div class="sp"><span class="sp-d" style="background:#ff3366"></span>IAM · Secrets Management</div>
+        <div class="sp"><span class="sp-d" style="background:#ff3366"></span>Vulnerability Scanning · Security Quality Gates</div>
       </div>
     </div>
     <div class="reveal">
-      <div class="scat-t">Databases</div>
+      <div class="scat-t">Reliability &amp; Operations</div>
       <div class="sr">
-        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>Amazon RDS</div>
-        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>MySQL · SQL</div>
+        <div class="sp"><span class="sp-d" style="background:#39ff14"></span>Autoscaling · High Availability</div>
+        <div class="sp"><span class="sp-d" style="background:#39ff14"></span>Incident Management · Root Cause Analysis</div>
+        <div class="sp"><span class="sp-d" style="background:#39ff14"></span>Backup &amp; Recovery · Capacity Monitoring</div>
+        <div class="sp"><span class="sp-d" style="background:#39ff14"></span>Cloud Cost Optimization</div>
       </div>
     </div>
     <div class="reveal">
-      <div class="scat-t">Artifact &amp; Storage Management</div>
+      <div class="scat-t">Tools &amp; Practices</div>
       <div class="sr">
-        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>Amazon S3</div>
-        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>Amazon ECR</div>
-        <div class="sp"><span class="sp-d" style="background:#ff9500"></span>AWS Artifact Repositories</div>
-      </div>
-    </div>
-    <div class="reveal">
-      <div class="scat-t">DevOps Automation</div>
-      <div class="sr">
-        <div class="sp"><span class="sp-d" style="background:#39ff14"></span>CI/CD Pipeline Automation</div>
-        <div class="sp"><span class="sp-d" style="background:#39ff14"></span>Infrastructure Provisioning</div>
-        <div class="sp"><span class="sp-d" style="background:#39ff14"></span>Deployment Automation</div>
-        <div class="sp"><span class="sp-d" style="background:#39ff14"></span>Environment Management</div>
-      </div>
-    </div>
-    <div class="reveal">
-      <div class="scat-t">Testing &amp; Quality Integration</div>
-      <div class="sr">
-        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>Automated Build Validation</div>
-        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>Deployment Verification</div>
-        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>Smoke Testing · Health Checks</div>
-      </div>
-    </div>
-    <div class="reveal">
-      <div class="scat-t">Project Management</div>
-      <div class="sr">
-        <div class="sp"><span class="sp-d" style="background:#0052cc"></span>Jira</div>
-        <div class="sp"><span class="sp-d" style="background:#172b4d"></span>Confluence</div>
-      </div>
-    </div>
-    <div class="reveal">
-      <div class="scat-t">Methodologies</div>
-      <div class="sr">
-        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>Agile Scrum</div>
-        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>Sprint Planning · Daily Stand-ups</div>
-        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>Sprint Reviews · Retrospectives</div>
-      </div>
-    </div>
-    <div class="reveal">
-      <div class="scat-t">Others</div>
-      <div class="sr">
-        <div class="sp"><span class="sp-d" style="background:#39ff14"></span>Linux Administration</div>
-        <div class="sp"><span class="sp-d" style="background:#ff6b35"></span>Application Deployment</div>
-        <div class="sp"><span class="sp-d" style="background:#ff6b35"></span>Release Management</div>
-        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>Log Analysis · Root Cause Analysis</div>
-        <div class="sp"><span class="sp-d" style="background:#00e5ff"></span>Performance Monitoring</div>
+        <div class="sp"><span class="sp-d" style="background:#0052cc"></span>Jira · ServiceNow</div>
+        <div class="sp"><span class="sp-d" style="background:#0052cc"></span>Agile/Scrum · GitOps</div>
+        <div class="sp"><span class="sp-d" style="background:#0052cc"></span>Change Management</div>
+        <div class="sp"><span class="sp-d" style="background:#0052cc"></span>Technical Documentation · Runbooks</div>
       </div>
     </div>
   </div>
@@ -650,9 +645,9 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
     </div>
     <div class="cc reveal">
       <span class="ce">🚀</span>
-      <div class="cn">AWS re/Start Graduate</div>
-      <div class="ci">Amazon Web Services · 12-week intensive program</div>
-      <span class="cd">Sep 2025</span>
+      <div class="cn">AWS re/Start Program</div>
+      <div class="ci">Cloud Computing, Networking, Security &amp; Linux</div>
+      <span class="cd">Jul – Aug 2025</span>
     </div>
   </div>
 </section>
@@ -665,8 +660,8 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
     <div class="edu-ic">🎓</div>
     <div>
       <div class="edu-deg">Bachelor of Science in Computer Science</div>
-      <div class="edu-sc">HKRH College · Affiliated by Kamaraj University · Theni, Tamil Nadu</div>
-      <div class="edu-yr">May 2022 – May 2025</div>
+      <div class="edu-sc">HKRH College · Madurai Kamaraj University · Theni, Tamil Nadu · CGPA 7.2/10</div>
+      <div class="edu-yr">2022 – 2025</div>
     </div>
   </div>
 </section>
@@ -679,13 +674,12 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
       Let's build<br/><span>cloud-native</span> together.
     </div>
     <p style="font-size:.78rem;color:var(--muted);line-height:1.8;max-width:440px;margin:0 auto" class="reveal">
-      Open to DevOps Engineer, Cloud Engineer, and Platform Engineering roles.<br/>Let's talk automation, infrastructure, and reliability.
+      Open to DevOps, Cloud, and Platform Engineering roles · Immediate joiner · Open to relocation.<br/>Let's talk automation, infrastructure, and reliability.
     </p>
     <div class="cls reveal">
       <a href="mailto:mohamedadeep005@gmail.com" class="cl">✉ mohamedadeep005@gmail.com</a>
-      <a href="https://www.linkedin.com/in/mohamed-adeep-devops/" class="cl" target="_blank">🔗 LinkedIn</a>
       <a href="https://github.com/Md-Adheep" class="cl" target="_blank">⚙ GitHub</a>
-      <a href="tel:7904890057" class="cl">📞 7904890057</a>
+      <a href="tel:+917904890057" class="cl">📞 +91 79048 90057</a>
     </div>
   </div>
 </section>
@@ -715,7 +709,7 @@ const lines=[
   'aws ec2 describe-instances --region ap-south-1',
   'nginx -t && systemctl reload nginx',
   'docker build -t adeep/app . && docker push',
-  'plesk bin server_pref --update',
+  'terraform apply -auto-approve',
   'aws cloudwatch put-metric-alarm ...',
   'kubectl apply -f k8s/deployment.yaml'
 ];
