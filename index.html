@@ -55,7 +55,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .h-role{margin-top:1.1rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);animation:fu .8s .2s ease both}
 .h-role em{color:var(--cyan);font-style:normal}
 .tw-box{margin-top:1.3rem;padding:.75rem 1rem;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:2px;font-size:.76rem;color:var(--green);animation:fu .8s .3s ease both}
-.tw-box span::before{content:'$ ';color:var(--cyan)}
+.tw-box>span:first-child::before{content:'$ ';color:var(--cyan)}
 #tw{display:inline}
 .cb{display:inline-block;width:7px;height:.82em;background:var(--green);vertical-align:middle;animation:blink .9s step-end infinite;margin-left:2px}
 .h-desc{margin-top:1.4rem;max-width:510px;font-size:.79rem;line-height:1.9;color:rgba(232,234,240,.5);animation:fu .8s .4s ease both}
@@ -205,13 +205,42 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
 
 @media(max-width:900px){
   nav{padding:1rem 1.5rem}.nav-ul{display:none}
-  #hero{grid-template-columns:1fr;padding:5rem 1.5rem 3rem;gap:2rem}.hero-r{display:none}
+  #hero{grid-template-columns:1fr;padding:5rem 1.5rem 3rem;gap:2rem}
   section{padding:5rem 1.5rem}
   .ag{grid-template-columns:1fr}
   .pg{grid-template-columns:1fr}
   .pc.feat{grid-column:span 1}
   footer{flex-direction:column;gap:.5rem;text-align:center}
   .h-stats{flex-wrap:wrap;gap:1.5rem}
+}
+
+.nav-menu{display:none;background:none;border:1px solid var(--border);color:var(--white);width:38px;height:38px;border-radius:3px;align-items:center;justify-content:center;cursor:pointer}
+.hero-l,.ag>*,.pg>*{min-width:0}
+@media(max-width:900px){
+  .nav-menu{display:inline-flex}
+  .t-body{padding:1rem;font-size:.66rem;min-height:0}
+  .tl{flex-wrap:wrap}
+  .to[style]{padding-left:.85rem!important}
+  .nav-dot{display:none}
+  .nav-ul.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;padding:.5rem 1.5rem 1rem;background:rgba(7,9,15,.97);border-bottom:1px solid var(--border)}
+  .nav-ul.open a{display:block;padding:.85rem 0;font-size:.78rem}
+  .h-name{font-size:clamp(2.2rem,11vw,3.6rem)}
+  .tw-box{overflow-wrap:anywhere}
+  .h-btns{flex-wrap:wrap}
+  .h-btns .btn{flex:1 1 100%;justify-content:center}
+  .o1{width:320px;height:320px;right:-120px}
+  .o2{width:240px;height:240px}
+}
+@media(max-width:480px){
+  section{padding:4rem 1rem}
+  #hero{padding:5rem 1rem 3rem}
+  nav{padding:.9rem 1rem}
+  .h-stats{gap:1.25rem}
+  .st-n{font-size:1.7rem}
+}
+@media(hover:none),(pointer:coarse){
+  body,.btn,.sp{cursor:auto}
+  #cur,#cur-r{display:none}
 }
 </style>
 </head>
@@ -232,6 +261,7 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-dot">Open to Opportunities</div>
+  <button class="nav-menu" id="navMenu" aria-label="Open menu" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
 </nav>
 
 <!-- HERO -->
@@ -358,7 +388,7 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
         <span class="etag">Ansible</span>
         <span class="etag">Kubernetes/EKS</span>
         <span class="etag">Helm</span>
-        <span class="etag">Argo CD</span>
+        <span class="etag">Argo CD</span></div>
         <span class="etag">Jenkins</span>
         <span class="etag">GitLab CI/CD</span>
         <span class="etag">GitHub Actions</span>
@@ -760,6 +790,13 @@ window.addEventListener('scroll',()=>{
   let c='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-150)c=s.id});
   navAs.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+c?'var(--cyan)':''});
 });
+</script>
+<script>
+(function(){var b=document.getElementById('navMenu'),u=document.querySelector('.nav-ul');if(!b||!u)return;
+function set(o){u.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false')}
+b.addEventListener('click',function(e){e.stopPropagation();set(!u.classList.contains('open'))});
+u.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
+document.addEventListener('click',function(e){if(!u.contains(e.target))set(false)});})();
 </script>
 </body>
 </html>
