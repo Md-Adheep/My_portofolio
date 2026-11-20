@@ -485,6 +485,49 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
       </div>
     </div>
 
+    <!-- PROJECT 4 - AWS CloudOps & Security Lab -->
+    <div class="pc reveal">
+      <div class="ph">
+        <div class="pic" style="background:rgba(255,149,0,.08);border-color:rgba(255,149,0,.15)">🛡️</div>
+      </div>
+      <div class="pn">AWS CloudOps &amp; Security Lab</div>
+      <div class="pd">Terraform-built AWS lab covering day-to-day cloud operations and security.</div>
+      <ul class="pbuls">
+        <li>SSM-managed EC2 with no SSH: Session Manager, Patch Manager, and Run Command health checks</li>
+        <li>Private S3 site behind CloudFront with AWS WAF managed rules and rate limiting</li>
+        <li>GuardDuty alerts via EventBridge and SNS; CodePipeline with CodeBuild and CodeDeploy and automatic rollback</li>
+      </ul>
+      <div class="plinks"><a href="https://github.com/Md-Adheep/aws-cloudops-security-lab" target="_blank" class="plink">⚙ View on GitHub</a></div>
+      <div class="pstack">
+        <span class="stag" style="color:#7b42bc;border-color:rgba(123,66,188,.18)">Terraform</span>
+        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.18)">SSM</span>
+        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.18)">CloudFront</span>
+        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.18)">WAF</span>
+        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.18)">CodePipeline</span>
+      </div>
+    </div>
+
+    <!-- PROJECT 5 - Centralized Logging with Loki -->
+    <div class="pc reveal">
+      <div class="ph">
+        <div class="pic" style="background:rgba(244,104,0,.08);border-color:rgba(244,104,0,.15)">📜</div>
+      </div>
+      <div class="pn">Centralized Logging with Grafana Loki</div>
+      <div class="pd">Loki, Promtail, and Grafana stack for structured logs and release validation.</div>
+      <ul class="pbuls">
+        <li>Promtail ships structured JSON logs to Loki with 7-day retention</li>
+        <li>LogQL post-deployment check fails a release when errors spike</li>
+        <li>CI starts the full stack and verifies log ingestion end to end</li>
+      </ul>
+      <div class="plinks"><a href="https://github.com/Md-Adheep/loki-centralized-logging" target="_blank" class="plink">⚙ View on GitHub</a></div>
+      <div class="pstack">
+        <span class="stag" style="color:#f46800;border-color:rgba(244,104,0,.18)">Loki</span>
+        <span class="stag" style="color:#f46800;border-color:rgba(244,104,0,.18)">Grafana</span>
+        <span class="stag">Promtail</span>
+        <span class="stag" style="color:#0db7ed;border-color:rgba(13,183,237,.15)">Docker Compose</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
